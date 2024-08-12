@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ebuka Philip Oguchi - Personal Webpage</title>
+    <link rel="stylesheet" href="style.css">
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const tabs = document.querySelectorAll('.tab-link');
+            const sections = document.querySelectorAll('section');
+            tabs.forEach(tab => {
+                tab.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    tabs.forEach(t => t.classList.remove('active'));
+                    sections.forEach(section => section.classList.remove('active'));
+                    this.classList.add('active');
+                    const activeTab = this.getAttribute('data-tab');
+                    document.getElementById(activeTab).classList.add('active');
+                });
+            });
+        });
+
+        function openTab(tabName) {
+            var i, tabcontent, tablinks;
+            tabcontent = document.querySelectorAll("section");
+            for (i = 0; i < tabcontent.length; i++) {
+                tabcontent[i].style.display = "none";
+            }
+            tablinks = document.querySelectorAll(".tab-link");
+            for (i = 0; i < tablinks.length; i++) {
+                tablinks[i].className = tablinks[i].className.replace(" active", "");
+            }
+            document.getElementById(tabName).style.display = "block";
+            document.querySelector('[onclick="openTab(\'' + tabName + '\')"]').className += " active";
+        }
+
+        // Initialize the default tab
+        window.onload = function() {
+            openTab('about');
+        };
+    </script>
+</head>
+<body>
+    <header>
+        <h1>Ebuka Philip Oguchi</h1>
+        <p>Ph.D. Candidate in Computer Science and Engineering</p>
+    </header>
+
+    <div class="nav-tabs">
+        <a href="javascript:void(0);" class="tab-link active" onclick="openTab('about')">About Me</a>
+        <a href="javascript:void(0);" class="tab-link" onclick="openTab('research')">Research & Publications</a>
+        <a href="javascript:void(0);" class="tab-link" onclick="openTab('projects')">Projects</a>
+        <a href="javascript:void(0);" class="tab-link" onclick="openTab('experience')">Experience</a>
+        <a href="javascript:void(0);" class="tab-link" onclick="openTab('awards')">Awards</a>
+        <a href="javascript:void(0);" class="tab-link" onclick="openTab('resources')">Resources</a>
+        <a href="javascript:void(0);" class="tab-link" onclick="openTab('contact')">Contact</a>
+    </div>
+
+    <div class="content">
+        <section id="about" class="active">
+            <h2>About Me</h2>
+           <div style="display: flex; align-items: flex-start; justify-content: space-between;">
+        <div>
+            <ul class="no-bullets">
+                <li>School of Computing</li>
+                <li>University of Nebraska - Lincoln</li>
+                <li>Office: 114c Schorr Center, 1100 T St, Lincoln, Nebraska 68588-0150</li>
+                <li>Phone: (531) 229-7046</li>
+                <li>Emails: <a href="mailto:oguchiebuka919@gmail.com">oguchiebuka919@gmail.com</a>, <a href="mailto:eoguchi2@huskers.unl.edu">eoguchi2@huskers.unl.edu</a></li>
+            </ul>
+            <p>
+                I am a 4th-year Ph.D. candidate in Computer Science and Engineering at the University of Nebraska, Lincoln. 
+                My research focuses on cybersecurity across the agricultural, vehicular, machine learning, and molecular sectors. 
+                I specialize in ensuring message integrity and authentication for commercial off-the-shelf (COTS) wireless devices, 
+                utilizing expertise in machine learning and security protocols.
+            </p>
+            </div>
+        <img src="philippo.JPG" alt="Ebuka Philip Oguchi standing in front of a university building" style="width:100%; max-width:200px; height:auto; margin-left: 20px;">
+    </div>
+        </section>
+
+        <section id="research">
+            <h2>Research & Publications</h2>
+            <ul>
+                <li>"STUN: Secret-Free Trust-Establishment for Underground Wireless Networks," in Proc. of IEEE INFOCOM Workshop on Wireless-Sec: 5G & Beyond Wireless Security, Virtual Event, May 2022.</li>
+                <li>"VET: Autonomous Vehicular Credential Verification using Trajectory and Motion Vectors," in Proc. of EAI International Conference on Security and Privacy in Communication Networks (EAI SecureComm 2023), Hong Kong, October 2023.</li>
+                <li>"Soil Assisted Trust-Establishment For Underground Internet-of-Things," under submission to ACM Internet of Things Journal, February 2024.</li>
+                <li>Poster: "STUN: Secret-Free Trust-Establishment for Underground Wireless Networks," Nebraska Research Days, Office of Research & Economic Development, Graduate Research Exhibition, In-Person Event, March 2023.</li>
+            </ul>
+        </section>
+
+        <section id="projects">
+            <h2>Projects</h2>
+            <ul>
+                <li><strong>Agricultural IoT Security:</strong> Tackling the essential issue of building trust within the framework of developing agricultural IoT network applications. Strategies integrate physical layer features with cryptographic primitives. Funded by NSF SaTC: CORE: Medium.</li>
+                <li><strong>Autonomous Vehicle Security:</strong> Using navigational data and the Doppler effect to ensure message integrity and authentication of autonomous vehicles. Funded by Nebraska Center for Energy Sciences Research.</li>
+                <li><strong>Radio Frequency Fingerprinting:</strong> Research on fingerprinting in underground networks for message integrity verification. Funded by NSF: CORE: Small.</li>
+            </ul>
+        </section>
+
+        <section id="experience">
+            <h2>Experience</h2>
+            <ul>
+                <li><strong>Teaching Assistant:</strong> Cryptography & Security course CSCE 477/877
+                    <ul>
+                        <li>Organized experiments, graded homework and labs, supported students in mastering complex topics.</li>
+                        <li>Enrollment: Undergraduate: 21, Graduate: 3 - Fall 2022</li>
+                    </ul>
+                </li>
+                <li><strong>Internship:</strong> Electronic Development Institute, Awka, 2015
+                    <ul>
+                        <li>Engaged in projects involving remote control of home appliances using infrared sensors.</li>
+                    </ul>
+                </li>
+               
+                <li><strong>Mentorship
+                <li><strong>Mentorship Programs:</strong>
+                    <ul>
+                        <li>Google CS Research Mentorship Program (CSRMP)</li>
+                        <li>The Institute for African American Mentoring in Computing Sciences (iAAMCS)</li>
+                    </ul>
+                </li>
+                <li><strong>Mentees at University of Nebraska Lincoln:</strong>
+                    <ul>
+                        <li>Graduate Student: Mr. Hakim Lado - Ph.D. - Fall 2023</li>
+                        <li>Undergraduate Student: Ms. Arielle Monson, Senior, Fall 2022--Spring 2023</li>
+                    </ul>
+                </li>
+            </ul>
+        </section>
+
+        <section id="awards">
+            <h2>Awards and Honors</h2>
+            <ul>
+                <li>Mary E. and Elmer H. Dohrmann Fellowship, 2023</li>
+                <li>Chinese Government Scholarship, 2020</li>
+            </ul>
+        </section>
+
+        <section id="resources">
+            <h2>Resources</h2>
+            <h3>Conference Statistics</h3>
+            <ul>
+                <li>
+                    <a href="http://almeroth.com/networking/journal_ranking.html" target="_blank">
+                        Networking Journals and Conferences Ranking
+                    </a>
+                </li>
+                <li>
+                    <a href="http://almeroth.com/statistics/" target="_blank">
+                        Networking Conferences Statistics by K. Almeroth
+                    </a>
+                </li>
+                <li>
+                    <a href="http://www.cs.ucf.edu/~ggu/interests/Computer_Security_Conference_Statistics.html" target="_blank">
+                        Security Journals and Conferences Ranking
+                    </a>
+                </li>
+                <li>
+                    <a href="https://dblp.org/db/conf/acns/acns2019.html" target="_blank">
+                        Computer Security Conferences Statistics by G. Gu
+                    </a>
+                </li>
+                <li>
+                    <a href="http://icsd.i2r.a-star.edu.sg/staff/jianying/conference-ranking.html" target="_blank">
+                        Crypto and Security Conferences Ranking by J. Zhou
+                    </a>
+                </li>
+            </ul>
+            <h3>Research and Writing Guidelines</h3>
+            <ul>
+                <li>
+                    <a href="https://www.phdcomics.com/comics/archive.php?comicid=1845" target="_blank">
+                        How to be a winner — advice for students starting into research work
+                    </a>
+                </li>
+                <li>
+                    <a href="http://www.cs.unc.edu/~azuma/hitch4.html" target="_blank">
+                        So Long, and Thanks for the Ph.D.! by Ronald T. Azuma
+                    </a>
+                </li>
+                <li>
+                    <a href="https://www.press.uchicago.edu/ucp/books/book/chicago/C/bo3637068.html" target="_blank">
+                        The Craft of Research
+                    </a>
+                </li>
+                <li>
+                    <a href="https://www.amazon.com/Elements-Style-William-Strunk-Jr/dp/020530902X" target="_blank">
+                        Elements of Style
+                    </a>
+                </li>
+                <li>
+                    <a href="https://www.cis.upenn.edu/~mkearns/teaching/CS364H/hw1.html" target="_blank">
+                        Top-10 Tips for Writing a Paper by Jim Kurose
+                    </a>
+                </li>
+                <li>
+                    <a href="https://www.amazon.com/Feynmans-Rainbow-Search-Beauty-Physics/dp/0446690510" target="_blank">
+                        Feynman’s Rainbow: A Search for Beauty in Physics and in Life, by Leonard Mlodinow
+                    </a>
+                </li>
+            </ul>
+        </section>
+
+        <section id="contact">
+            <h2>Contact</h2>
+            <ul>
+                <li>Email: <a href="mailto:oguchiebuka919@gmail.com">oguchiebuka919@gmail.com</a></li>
+                <li>Email: <a href="mailto:eoguchi2@huskers.unl.edu">eoguchi2@huskers.unl.edu</a></li>
+                <li>LinkedIn: <a href="https://www.linkedin.com/in/ebuka-oguchi-18326a166/" target="_blank">LinkedIn Profile</a></li>
+                <li>GitHub: <a href="https://github.com/Oguchi4" target="_blank">GitHub Profile</a></li>
+            </ul>
+        </section>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Ebuka Philip Oguchi</p>
+    </footer>
+
+    <script>
+        function openTab(tabName) {
+            var i, tabcontent, tablinks;
+            tabcontent = document.querySelectorAll("section");
+            for (i = 0; i < tabcontent.length; i++) {
+                tabcontent[i].style.display = "none";
+            }
+            tablinks = document.querySelectorAll(".tab-link");
+            for (i = 0; i < tablinks.length; i++) {
+                tablinks[i].className = tablinks[i].className.replace(" active", "");
+            }
+            document.getElementById(tabName).style.display = "block";
+            document.querySelector('[onclick="openTab(\'' + tabName + '\')"]').className += " active";
+        }
+
+        // Initialize the default tab
+        window.onload = function() {
+            openTab('about');
+        };
+    </script>
+</body>
+</html>
+
