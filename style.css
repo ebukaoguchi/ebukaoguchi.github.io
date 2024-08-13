@@ -143,6 +143,11 @@ a {
 a:hover {
     text-decoration: underline;
 }
+img {
+    max-width: 100%; /* ensures that images never exceed the container's width */
+    height: auto; /* maintains the aspect ratio of the image */
+    display: block; /* prevents extra space below the image as inline-block elements have */
+}
 
 /* Responsive adjustments */
 @media (max-width: 600px) {
