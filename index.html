@@ -32,7 +32,7 @@
                 tablinks[i].className = tablinks[i].className.replace(" active", "");
             }
             document.getElementById(tabName).style.display = "block";
-            document.querySelector('[onclick="openTab(\'' + tabName + '\')"]').className += " active";
+            document.querySelector('[data-tab="' + tabName + '"]').className += " active";
         }
 
         // Initialize the default tab
@@ -48,36 +48,31 @@
     </header>
 
     <div class="nav-tabs">
-        <a href="javascript:void(0);" class="tab-link active" onclick="openTab('about')">About Me</a>
-        <a href="javascript:void(0);" class="tab-link" onclick="openTab('research')">Research & Publications</a>
-        <a href="javascript:void(0);" class="tab-link" onclick="openTab('projects')">Projects</a>
-        <a href="javascript:void(0);" class="tab-link" onclick="openTab('experience')">Experience</a>
-        <a href="javascript:void(0);" class="tab-link" onclick="openTab('awards')">Awards</a>
-        <a href="javascript:void(0);" class="tab-link" onclick="openTab('resources')">Resources</a>
-        <a href="javascript:void(0);" class="tab-link" onclick="openTab('contact')">Contact</a>
+        <a href="#" class="tab-link active" data-tab="about" onclick="openTab('about')">About Me</a>
+        <a href="#" class="tab-link" data-tab="research" onclick="openTab('research')">Research & Publications</a>
+        <a href="#" class="tab-link" data-tab="projects" onclick="openTab('projects')">Projects</a>
+        <a href="#" class="tab-link" data-tab="experience" onclick="openTab('experience')">Experience</a>
+        <a href="#" class="tab-link" data-tab="awards" onclick="openTab('awards')">Awards</a>
+        <a href="#" class="tab-link" data-tab="resources" onclick="openTab('resources')">Resources</a>
+        <a href="#" class="tab-link" data-tab="contact" onclick="openTab('contact')">Contact</a>
     </div>
 
     <div class="content">
         <section id="about" class="active">
             <h2>About Me</h2>
-           <div style="display: flex; align-items: flex-start; justify-content: space-between;">
-        <div>
-            <ul class="no-bullets">
-                <li>School of Computing</li>
-                <li>University of Nebraska - Lincoln</li>
-                <li>Office: 114c Schorr Center, 1100 T St, Lincoln, Nebraska 68588-0150</li>
-                <li>Phone: (531) 229-7046</li>
-                <li>Emails: <a href="mailto:oguchiebuka919@gmail.com">oguchiebuka919@gmail.com</a>, <a href="mailto:eoguchi2@huskers.unl.edu">eoguchi2@huskers.unl.edu</a></li>
-            </ul>
-            <p>
-                I am a 4th-year Ph.D. candidate in Computer Science and Engineering at the University of Nebraska, Lincoln. 
-                My research focuses on cybersecurity across the agricultural, vehicular, machine learning, and molecular sectors. 
-                I specialize in ensuring message integrity and authentication for commercial off-the-shelf (COTS) wireless devices, 
-                utilizing expertise in machine learning and security protocols.
-            </p>
+            <div style="display: flex; align-items: flex-start; justify-content: space-between;">
+                <div>
+                    <ul class="no-bullets">
+                        <li>School of Computing</li>
+                        <li>University of Nebraska - Lincoln</li>
+                        <li>Office: 114c Schorr Center, 1100 T St, Lincoln, Nebraska 68588-0150</li>
+                        <li>Phone: (531) 229-7046</li>
+                        <li>Emails: <a href="mailto:oguchiebuka919@gmail.com">oguchiebuka919@gmail.com</a>, <a href="mailto:eoguchi2@huskers.unl.edu">eoguchi2@huskers.unl.edu</a></li>
+                    </ul>
+                    <p>I am a 4th-year Ph.D. candidate in Computer Science and Engineering at the University of Nebraska, Lincoln. My research focuses on cybersecurity across the agricultural, vehicular, machine learning, and molecular sectors. I specialize in ensuring message integrity and authentication for commercial off-the-shelf (COTS) wireless devices, utilizing expertise in machine learning and security protocols.</p>
+                </div>
+                <img src="philippo.JPG" alt="Ebuka Philip Oguchi standing in front of a university building" style="width:90%; max-width:200px; height:auto; margin-left: 20px;">
             </div>
-        <img src="philippo.JPG" alt="Ebuka Philip Oguchi standing in front of a university building" style="width:90%; max-width:200px; height:auto; margin-left: 20px;">
-    </div>
         </section>
 
         <section id="research">
@@ -113,8 +108,8 @@
                         <li>Engaged in projects involving remote control of home appliances using infrared sensors.</li>
                     </ul>
                 </li>
-               
-                <li><strong>Mentorship
+            </ul>
+            <ul>
                 <li><strong>Mentorship Programs:</strong>
                     <ul>
                         <li>Google CS Research Mentorship Program (CSRMP)</li>
@@ -204,7 +199,7 @@
         </section>
 
         <section id="contact">
-            <h2>Contact</h2>
+            <h2>Contact</h2
             <ul>
                 <li>Email: <a href="mailto:oguchiebuka919@gmail.com">oguchiebuka919@gmail.com</a></li>
                 <li>Email: <a href="mailto:eoguchi2@huskers.unl.edu">eoguchi2@huskers.unl.edu</a></li>
