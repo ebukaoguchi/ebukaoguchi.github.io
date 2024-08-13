@@ -1,43 +1,93 @@
-body {
+body { 
     font-family: Arial, sans-serif; 
     line-height: 1.6; 
     margin: 0; 
     padding: 0; 
     background-color: #f9f9f9;
-    font-size: 16px; /* Sets a base font size; adjust as needed */
-    text-align: center; /* Centers all text within the body */
 }
-
-.content, .nav-tabs a {
-    padding: 15px; /* Increases padding for better touch interaction and spacing */
-    text-align: center; /* Ensures text in content and nav-tabs is centered */
+header { 
+    background-color: #333; 
+    color: #fff; 
+    padding: 10px 0; 
+    text-align: center; 
 }
-
-section {
-    padding: 15px;
-    margin-bottom: 20px; /* Adds more space at the bottom of each section */
-    text-align: center; /* Centers text in sections */
+.nav-tabs { 
+    display: flex; 
+    justify-content: center; 
+    background-color: #444; 
+    padding: 10px; 
 }
-
+.nav-tabs a { 
+    color: #fff; 
+    margin: 0 10px; 
+    padding: 10px 15px; 
+    text-decoration: none; 
+    background-color: #555; 
+    border-radius: 5px;
+}
+.nav-tabs a.active { 
+    background-color: #777; 
+}
+.content { 
+    padding: 20px; 
+    max-width: 800px; 
+    margin: 20px auto; 
+    background-color: #fff; 
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+footer { 
+    background-color: #333; 
+    color: #fff; 
+    text-align: center; 
+    padding: 10px 0; 
+}
+section { 
+    display: none; 
+}
+section.active { 
+    display: block; 
+}
 h2 {
-    text-align: center; /* Centers headings */
+    color: #333;
+}
+ul, ol {
+    list-style-type: disc;
+    padding: 0;
+    margin: 0 0 10px 20px;
+}
+ul li, ol li {
+    margin: 5px 0;
+}
+.no-bullets {
+    list-style-type: none; /* Removes bullets */
+    padding: 0; /* Removes default padding */
+    margin: 0 0 10px 0; /* Adjusts the margin */
+}
+a {
+    color: #007acc;
+    text-decoration: none;
+}
+a:hover {
+    text-decoration: underline;
+}
+img {
+    max-width: 100%; /* ensures that images never exceed the container's width */
+    height: auto; /* maintains the aspect ratio of the image */
+    display: block; /* prevents extra space below the image as inline-block elements have */
+    margin: 20px auto; /* increases margin around the image for better spacing */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* optional: adds a subtle shadow for depth */
 }
 
+/* Responsive adjustments */
 @media (max-width: 600px) {
-    h2 {
-        font-size: 20px; /* Larger headers on small screens */
-    }
-    .nav-tabs a {
-        font-size: 16px; /* Ensures nav links are easy to read and tap */
-    }
     .nav-tabs {
-        flex-direction: column;
-        padding: 0; /* Removes padding on small screens for edge-to-edge design */
-        text-align: center; /* Ensures text in nav-tabs is centered */
+        flex-direction: column; /* Stack tabs vertically on small screens */
+        align-items: center; /* Center-align the items */
     }
     .nav-tabs a {
-        width: 100%; /* Full width tabs are easier to tap */
-        margin-bottom: 2px; /* Adds a small separation between tabs */
-        text-align: center; /* Centers text in nav links */
+        width: 100%; /* Make each tab full width */
+        padding: 10px; /* Adjust padding for better accessibility */
+        text-align: center; /* Center text in tabs */
+        border-bottom: 1px solid #ccc; /* Adds a subtle border between tabs */
     }
 }
