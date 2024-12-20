@@ -1,50 +1,138 @@
-<section id="about" class="active">
-    <h2>About Me</h2>
-    <div style="display: flex; flex-direction: column; position: relative;">
-        <!-- Image Positioned in the Top-Right Corner -->
-        <div style="position: absolute; top: 0; right: 0; width: 20%; max-width: 150px; text-align: center;">
-            <img src="philippo.JPG" 
-                 alt="Ebuka Philip Oguchi standing in front of a university building" 
-                 style="width: 100%; height: auto; border-radius: 8px; box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);">
-        </div>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ebuka Philip Oguchi - Personal Webpage</title>
+    <link rel="stylesheet" href="style.css">
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const tabs = document.querySelectorAll('.tab-link');
+            const sections = document.querySelectorAll('section');
+            tabs.forEach(tab => {
+                tab.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    tabs.forEach(t => t.classList.remove('active'));
+                    sections.forEach(section => section.classList.remove('active'));
+                    this.classList.add('active');
+                    const activeTab = this.getAttribute('data-tab');
+                    document.getElementById(activeTab).classList.add('active');
+                });
+            });
+        });
 
-        <!-- Left Content: Details -->
-        <div style="flex: 1;">
-            <ul class="no-bullets">
-                <li>School of Computing</li>
-                <li>University of Nebraska - Lincoln</li>
-                <li>Office: 114c Schorr Center, 1100 T St, Lincoln, Nebraska 68588-0150</li>
-                <li>Phone: (531) 229-7046</li>
-                <li>Emails: 
-                    <a href="mailto:oguchiebuka919@gmail.com">oguchiebuka919@gmail.com</a>, 
-                    <a href="mailto:eoguchi2@huskers.unl.edu">eoguchi2@huskers.unl.edu</a>
-                </li>
-            </ul>
-            <h4>Brief Bio</h4>
+        function openTab(tabName) {
+            var i, tabcontent, tablinks;
+            tabcontent = document.querySelectorAll("section");
+            for (i = 0; i < tabcontent.length; i++) {
+                tabcontent[i].style.display = "none";
+            }
+            tablinks = document.querySelectorAll(".tab-link");
+            for (i = 0; i < tablinks.length; i++) {
+                tablinks[i].className = tablinks[i].className.replace(" active", "");
+            }
+            document.getElementById(tabName).style.display = "block";
+            document.querySelector('[data-tab="' + tabName + '"]').className += " active";
+        }
+
+        // Initialize the default tab
+        window.onload = function() {
+            openTab('about');
+        };
+    </script>
+</head>
+<body>
+    <header>
+        <h1>Ebuka Philip Oguchi</h1>
+        <p>Ph.D. Candidate in Computer Science and Engineering</p>
+    </header>
+
+    <div class="nav-tabs">
+        <a href="#" class="tab-link active" data-tab="about" onclick="openTab('about')">About Me</a>
+        <a href="#" class="tab-link" data-tab="research" onclick="openTab('research')">Publications</a>
+        <a href="#" class="tab-link" data-tab="projects" onclick="openTab('projects')">Research</a>
+        <a href="#" class="tab-link" data-tab="experience" onclick="openTab('experience')">Experience</a>
+        <a href="#" class="tab-link" data-tab="awards" onclick="openTab('awards')">Awards and Services</a>
+        <a href="#" class="tab-link" data-tab="resources" onclick="openTab('resources')">Resources</a>
+        <a href="#" class="tab-link" onclick="openTab('media')">Media and Fun</a>
+        <a href="#" class="tab-link" data-tab="contact" onclick="openTab('contact')">Contact</a>
+    </div>
+
+    <div class="content">
+        <section id="about" class="active">
+            <h2>About Me</h2>
+
+    
+<!--
+            <div style="flex: 1; margin-right: 20px;">
+  -->          
+            <div style="display: flex; align-items: flex-start; justify-content: space-between;">
+                
+                
+
+                
+       <div style="width: 80%;">
+                
+        <ul class="no-bullets">
+            <li>School of Computing</li>
+            <li>University of Nebraska - Lincoln</li>
+            <li>Office: 114c Schorr Center, 1100 T St, Lincoln, Nebraska 68588-0150</li>
+            <li>Phone: (531) 229-7046</li>
+            <li>Emails: <a href="mailto:oguchiebuka919@gmail.com">oguchiebuka919@gmail.com</a>, <a href="mailto:eoguchi2@huskers.unl.edu">eoguchi2@huskers.unl.edu</a></li>
+        </ul>
+        <!--
+        <p>I am a 4th-year Ph.D. candidate in Computer Science and Engineering at the University of Nebraska, Lincoln, advised by Prof. Nirnimesh Ghose. I received my M.S. in Computer Applied Technology from the Changchun University of Science and Technology, China, in 2020, advised by Prof Fang Ming. I obtained my B.Eng in Electronic and Computer Engineering from Nnamdi Azikiwe University, Awka, Nigeria, in 2016, Advised by Prof. Akpado K. Aghaegbunam. My research focuses on cybersecurity across the agricultural, vehicular, machine learning, and molecular sectors. I specialize in ensuring message integrity and authentication for commercial off-the-shelf (COTS) wireless devices, utilizing expertise in machine learning and security protocols.</p>
+        -->
+        <h4>Brief Bio</h4>
             <p>
                 I am a 4th-year Ph.D. candidate in Computer Science and Engineering at the University of Nebraska, Lincoln, advised by Prof. Nirnimesh Ghose. I received my M.S. in Computer Applied Technology from the Changchun University of Science and Technology, China, in 2020, advised by Prof Fang Ming. I obtained my B.Eng in Electronic and Computer Engineering from Nnamdi Azikiwe University, Awka, Nigeria, in 2016, advised by Prof. Akpado K. Aghaegbunam.
             </p>
 
-            <h4>Research Interests</h4>
-            <p>
-                My research focuses on cybersecurity across the agricultural, vehicular, machine learning, and molecular sectors. I specialize in ensuring message integrity and authentication for commercial off-the-shelf (COTS) wireless devices, utilizing expertise in machine learning and security protocols.
-            </p>
-
-            <h4>Current Status</h4>
-            <p style="color: #e63946; font-weight: bold;">
-                I am currently on the job market! Seeking tenure-track positions.
-            </p>
-
-            <div class="highlight">
-                <a href="PhilipCV.pdf" target="_blank">Download My CV</a><br>
-                <a href="Cover_Letter.pdf" target="_blank">Download My Cover Letter</a><br>
-                <a href="Research_Statement.pdf" target="_blank">Read My Research Statement</a><br>
-                <a href="Diversity_Statement.pdf" target="_blank">Read My Diversity Statement</a><br>
-                <a href="Teaching_Statement.pdf" target="_blank">Read My Teaching Statement</a>
-            </div>
-        </div>
+        <h4>Research Interests</h4>
+            <p>My research focuses on cybersecurity across the agricultural, vehicular, machine learning, and molecular sectors. I specialize in ensuring message integrity and authentication for commercial off-the-shelf (COTS) wireless devices, utilizing expertise in machine learning and security protocols.</p>
+         <!--
+        <h4>Professional Goal</h4>
+            <p>My professional goal is to advance cybersecurity practices and develop innovative solutions that protect critical infrastructures in agricultural and vehicular sectors, as well as other emerging fields. I aim to contribute significantly to both academia and industry, ensuring that the next generation of technology is secure and resilient.</p>
+        -->
+        
+        <a href="PhilipCV.pdf" target="_blank">Download My CV</a><br>
+           <a href="Cover_Letter.pdf" target="_blank">Download My Cover Letter</a><br>
+        <a href="Research_Statement.pdf" target="_blank">Read My Research Statement</a><br>
+        <a href="Diversity_Statement.pdf" target="_blank">Read My Diversity Statement</a><br>
+        <a href="Teaching_Statement.pdf" target="_blank">Read My Teaching Statement</a>
     </div>
-</section>
+                
+    <div style="width: 35%; text-align: center;margin-top: -90px;">
+        <img src="philippo.JPG" alt="Ebuka Philip Oguchi standing in front of a university building" style="width: 120%; height: auto;">
+    </div>
+</div>
+
+            <!-- 
+            <div style="display: flex; align-items: flex-start; justify-content: space-between;">
+                <div>
+                    <ul class="no-bullets">
+                        <li>School of Computing</li>
+                        <li>University of Nebraska - Lincoln</li>
+                        <li>Office: 114c Schorr Center, 1100 T St, Lincoln, Nebraska 68588-0150</li>
+                        <li>Phone: (531) 229-7046</li>
+                        <li>Emails: <a href="mailto:oguchiebuka919@gmail.com">oguchiebuka919@gmail.com</a>, <a href="mailto:eoguchi2@huskers.unl.edu">eoguchi2@huskers.unl.edu</a></li>
+                    </ul>
+                    <p>I am a 4th-year Ph.D. candidate in Computer Science and Engineering at the University of Nebraska, Lincoln, advised by Prof. Nirnimesh Ghose. I received my M.S. in Computer Applied Technology from the Changchun University of Science and Technology, China, in 2020, advised by Prof Fang Ming. I obtained my B.Eng in Electronic and Computer Engineering from Nnamdi Azikiwe University, Awka, Nigeria, in 2016, Advised by Prof. Akpado K. Aghaegbunam. My research focuses on cybersecurity across the agricultural, vehicular, machine learning, and molecular sectors. I specialize in ensuring message integrity and authentication for commercial off-the-shelf (COTS) wireless devices, utilizing expertise in machine learning and security protocols.</p>
+                    <a href="PHILIPCV.pdf" target="_blank">Download My CV</a><br>
+                    <a href="Research_Statement.pdf" target="_blank">Read My Research Statement</a><br>
+                    <a href="Diversity_Statement.pdf" target="_blank">Read My Diversity Statement</a><br>
+                    <a href="Teaching_Statement.pdf" target="_blank">Read My Teaching Statement</a>
+                     
+                
+                   <img src="philippo.JPG" alt="Ebuka Philip Oguchi standing in front of a university building" style="width:100%; max-width:300px; height:auto; margin-left: 40px; margin-right: auto;">
+                     -->
+                    <!--  
+                    <img src="philippo.JPG" alt="Ebuka Philip Oguchi standing in front of a university building" style="width:90%; max-width:200px; height:auto; margin-left: 20px;">
+              
+            <img src="philippo.JPG" alt="Ebuka Philip Oguchi standing in front of a university building" style="width:300px; height:auto; margin-left: 20px;">
+            -->
+            
+        </section>
 
         <section id="research">
     <h2>Research & Publications</h2>
@@ -59,7 +147,6 @@
     <p>This thesis explores advanced image recognition algorithms for smoke detection using ResNet and GoogleNet networks, providing a novel approach to early fire detection systems.</p>
     <a href="Smoke image.pdf" download>Download PDF</a>
 </li>
-
 
     </ul>
 </section>
@@ -129,7 +216,6 @@
                 </li>
             </ul>
         </section>
-
 
 <section id="awards">
     <h2>Awards and Honors</h2>
