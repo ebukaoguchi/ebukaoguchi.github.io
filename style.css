@@ -132,16 +132,4 @@ img {
     }
 }
 
-/* Current Status Text Styling */
-.job-market {
-    font-weight: bold;
-    color: #ff4500;
-    font-size: 1.2em; /* Slightly larger text */
-}
-.highlight {
-    background-color: #ffe5e5; /* Light red background */
-    padding: 10px;
-    border-radius: 5px;
-    text-align: center;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
+
