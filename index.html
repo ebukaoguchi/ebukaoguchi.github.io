@@ -1,8 +1,15 @@
 <section id="about" class="active">
     <h2>About Me</h2>
-    <div style="display: flex; align-items: flex-start; justify-content: space-between; gap: 20px;">
+    <div style="display: flex; flex-direction: column; position: relative;">
+        <!-- Image Positioned in the Top-Right Corner -->
+        <div style="position: absolute; top: 0; right: 0; width: 20%; max-width: 150px; text-align: center;">
+            <img src="philippo.JPG" 
+                 alt="Ebuka Philip Oguchi standing in front of a university building" 
+                 style="width: 100%; height: auto; border-radius: 8px; box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);">
+        </div>
+
         <!-- Left Content: Details -->
-        <div style="flex: 2;">
+        <div style="flex: 1;">
             <ul class="no-bullets">
                 <li>School of Computing</li>
                 <li>University of Nebraska - Lincoln</li>
@@ -15,12 +22,17 @@
             </ul>
             <h4>Brief Bio</h4>
             <p>
-                I am a 4th-year Ph.D. candidate in Computer Science and Engineering at the University of Nebraska, Lincoln, advised by Prof. Nirnimesh Ghose. I received my M.S. in Computer Applied Technology from the Changchun University of Science and Technology, China, in 2020, advised by Prof. Fang Ming. I obtained my B.Eng in Electronic and Computer Engineering from Nnamdi Azikiwe University, Awka, Nigeria, in 2016, advised by Prof. Akpado K. Aghaegbunam.
+                I am a 4th-year Ph.D. candidate in Computer Science and Engineering at the University of Nebraska, Lincoln, advised by Prof. Nirnimesh Ghose. I received my M.S. in Computer Applied Technology from the Changchun University of Science and Technology, China, in 2020, advised by Prof Fang Ming. I obtained my B.Eng in Electronic and Computer Engineering from Nnamdi Azikiwe University, Awka, Nigeria, in 2016, advised by Prof. Akpado K. Aghaegbunam.
             </p>
 
             <h4>Research Interests</h4>
             <p>
                 My research focuses on cybersecurity across the agricultural, vehicular, machine learning, and molecular sectors. I specialize in ensuring message integrity and authentication for commercial off-the-shelf (COTS) wireless devices, utilizing expertise in machine learning and security protocols.
+            </p>
+
+            <h4>Current Status</h4>
+            <p style="color: #e63946; font-weight: bold;">
+                I am currently on the job market! Seeking tenure-track positions.
             </p>
 
             <div class="highlight">
@@ -30,13 +42,6 @@
                 <a href="Diversity_Statement.pdf" target="_blank">Read My Diversity Statement</a><br>
                 <a href="Teaching_Statement.pdf" target="_blank">Read My Teaching Statement</a>
             </div>
-        </div>
-
-        <!-- Right Content: Image -->
-        <div style="flex: 1; text-align: center;">
-            <img src="philippo.JPG" 
-                 alt="Ebuka Philip Oguchi standing in front of a university building" 
-                 style="width: 100%; max-width: 250px; height: auto; box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);">
         </div>
     </div>
 </section>
