@@ -92,28 +92,5 @@ img {
         border-bottom: 1px solid #ccc; /* Adds a subtle border between tabs */
     }
 }
-/* Animation for "Currently on the job market" */
-.job-market {
-    font-weight: bold;
-    color: #ff4500; /* Highlight with an orange color */
-    animation: pulse 2s infinite; /* Animates indefinitely */
-}
-
-/* Keyframes for pulse effect */
-@keyframes pulse {
-    0% {
-        opacity: 1;
-        transform: scale(1);
-    }
-    50% {
-        opacity: 0.7;
-        transform: scale(1.05);
-    }
-    100% {
-        opacity: 1;
-        transform: scale(1);
-    }
-}
-
 
 
