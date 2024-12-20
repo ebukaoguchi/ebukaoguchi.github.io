@@ -93,4 +93,27 @@ img {
     }
 }
 
+/* Animated Microphone Icon */
+.microphone {
+    display: inline-block;
+    color: #ff4500; /* Highlight color */
+    animation: bounce 1.5s infinite;
+    font-size: 1.5em; /* Adjust size */
+}
 
+/* Keyframes for bounce animation */
+@keyframes bounce {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+/* Current Status Text Styling */
+.job-market {
+    font-weight: bold;
+    color: #ff4500;
+    font-size: 1.2em; /* Slightly larger text */
+}
