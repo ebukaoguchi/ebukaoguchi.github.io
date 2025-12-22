@@ -1,8 +1,7 @@
 /* =========================================
-   1. CSS VARIABLES (Theme Colors)
+   1. CSS VARIABLES
    ========================================= */
 :root {
-    /* Light Mode (Default) */
     --bg-color: #f4f6f8;
     --text-color: #333;
     --header-bg: #2c3e50;
@@ -14,12 +13,9 @@
     --nav-hover: #46637f;
     --link-color: #007acc;
     --border-color: #eee;
-    --shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
     --btn-text: #fff;
-    --news-bg: #f8f9fa;
 }
 
-/* Dark Mode Variables */
 body.dark-mode {
     --bg-color: #121212;
     --text-color: #e0e0e0;
@@ -32,9 +28,6 @@ body.dark-mode {
     --nav-hover: #3e3e42;
     --link-color: #4daafc;
     --border-color: #333;
-    --shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
-    --btn-text: #fff;
-    --news-bg: #252526;
 }
 
 /* =========================================
@@ -47,64 +40,41 @@ body {
     padding: 0; 
     background-color: var(--bg-color);
     color: var(--text-color);
-    transition: background-color 0.3s, color 0.3s;
 }
 
-h1, h2, h3, h4 {
-    color: var(--text-color);
-    margin-bottom: 10px;
-}
-
-a {
-    color: var(--link-color);
-    text-decoration: none;
-    transition: color 0.2s;
-}
-
-a:hover {
-    text-decoration: underline;
-}
+h1, h2, h3 { color: var(--text-color); margin-bottom: 10px; }
+a { color: var(--link-color); text-decoration: none; }
+a:hover { text-decoration: underline; }
 
 /* =========================================
-   3. HEADER & NIGHT MODE BUTTON
+   3. HEADER
    ========================================= */
 header { 
     background-color: var(--header-bg); 
     color: var(--header-text); 
-    padding: 30px 0; 
+    padding: 25px 0; 
     text-align: center; 
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-    position: relative; /* Needed for the button positioning */
+    position: relative;
 }
 
-header h1 {
-    color: var(--header-text);
-    margin: 0;
-}
+header h1 { color: var(--header-text); margin: 0; font-size: 2rem; }
+header p { margin: 5px 0 0; font-size: 1.1rem; opacity: 0.9; color: var(--header-text); }
 
-/* THE FIX: Button pinned to the top-right edge */
+/* Theme Button (Top Right) */
 .theme-toggle {
     position: absolute;
-    top: 15px;      /* Distance from top edge */
-    right: 15px;    /* Distance from right edge */
+    top: 15px;
+    right: 15px;
     background: rgba(255, 255, 255, 0.1);
     border: 1px solid rgba(255, 255, 255, 0.2);
     color: var(--header-text);
     padding: 8px 12px;
     cursor: pointer;
     border-radius: 6px;
-    font-size: 1.1rem;
-    z-index: 1000;
-    transition: all 0.2s ease;
-}
-
-.theme-toggle:hover {
-    background-color: rgba(255, 255, 255, 0.2);
-    transform: translateY(-1px);
 }
 
 /* =========================================
-   4. NAVIGATION
+   4. NAVIGATION TABS
    ========================================= */
 .nav-tabs { 
     display: flex; 
@@ -119,80 +89,64 @@ header h1 {
 
 .nav-tabs a { 
     color: var(--nav-text); 
-    padding: 15px 20px; 
+    padding: 12px 18px; 
     text-decoration: none; 
-    transition: background-color 0.3s;
     font-weight: 500;
+    cursor: pointer;
 }
 
-.nav-tabs a:hover { 
-    background-color: var(--nav-hover);
-}
-
-.nav-tabs a.active { 
-    background-color: var(--nav-active); 
-    color: #fff;
-}
+.nav-tabs a:hover { background-color: var(--nav-hover); }
+.nav-tabs a.active { background-color: var(--nav-active); color: #fff; }
 
 /* =========================================
-   5. CONTENT & LAYOUT
+   5. LAYOUT
    ========================================= */
 .content { 
     padding: 30px; 
-    max-width: 900px; 
+    max-width: 1000px; 
     margin: 30px auto; 
     background-color: var(--card-bg); 
     border-radius: 8px;
-    box-shadow: var(--shadow);
-    min-height: 600px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    min-height: 500px;
 }
 
-section { 
-    display: none; 
-    animation: fadeIn 0.4s ease-in-out;
-}
+/* Section visibility */
+section { display: none; }
+section.active { display: block; animation: fadeIn 0.3s; }
 
-section.active { display: block; }
+@keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
 
-@keyframes fadeIn {
-    from { opacity: 0; transform: translateY(5px); }
-    to { opacity: 1; transform: translateY(0); }
-}
-
-.profile-container {
+/* Two-Column Layout for About Page */
+.about-grid {
     display: flex;
     flex-wrap: wrap;
-    gap: 30px;
-    align-items: flex-start;
+    gap: 40px;
 }
 
-.profile-text { flex: 2; min-width: 300px; }
-.profile-image-wrapper { flex: 1; min-width: 250px; text-align: center; }
+.about-left { flex: 1; min-width: 250px; text-align: center; }
+.about-right { flex: 2; min-width: 300px; }
 
+/* Profile Image */
 .profile-img {
     width: 100%;
-    max-width: 300px;
+    max-width: 280px;
     border-radius: 8px;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
-    border: 4px solid var(--card-bg);
+    border: 4px solid var(--bg-color);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    margin-bottom: 20px;
 }
 
-/* Typing Effect Cursor */
-#typing-text::after {
-    content: '|';
-    animation: blink 1s infinite;
-}
-@keyframes blink { 50% { opacity: 0; } }
+.contact-info { text-align: left; font-size: 0.95rem; }
+.contact-info li { margin-bottom: 8px; }
 
-/* =========================================
-   6. SPECIAL SECTIONS (Job Market, News)
-   ========================================= */
+/* Job Market Box (High Visibility) */
 .highlight-box {
     background-color: rgba(0, 122, 204, 0.1); 
     border-left: 5px solid var(--nav-active);
-    padding: 20px;
-    margin-top: 20px;
+    padding: 15px 20px;
     border-radius: 4px;
+    margin-bottom: 25px; /* Push content down */
 }
 
 .job-market {
@@ -200,76 +154,28 @@ section.active { display: block; }
     color: #e67e22;
     font-size: 1.1em;
     display: inline-block;
-    animation: pulse 2s infinite;
 }
 
-@keyframes pulse {
-    0% { transform: scale(1); }
-    50% { transform: scale(1.02); }
-    100% { transform: scale(1); }
-}
-
-.microphone {
-    display: inline-block;
-    animation: bounce 1.5s infinite;
-    font-size: 1.5em;
-    margin-right: 5px;
-}
-@keyframes bounce {
-    0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(-5px); }
-}
-
-/* NEW: News Box Styles */
+/* News Box */
 .news-box {
     margin-top: 25px;
     padding: 15px;
-    background-color: var(--news-bg);
-    border-radius: 8px;
+    background-color: var(--bg-color);
     border: 1px solid var(--border-color);
+    border-radius: 8px;
+    font-size: 0.95rem;
 }
 
-.news-box h3 {
-    margin-top: 0;
-    font-size: 1.2em;
-    border-bottom: 2px solid var(--nav-active);
-    display: inline-block;
-    padding-bottom: 5px;
-}
-
-.news-box ul {
-    list-style: none;
-    padding: 0;
-    margin: 10px 0 0 0;
-}
-
-.news-box li {
-    margin-bottom: 8px;
-    font-size: 0.95em;
-    border-bottom: 1px dashed var(--border-color);
-    padding-bottom: 5px;
-}
-
-/* =========================================
-   7. COMPONENTS (Buttons, Lists, Grid)
-   ========================================= */
+/* Buttons */
+.button-group { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 10px; }
 .btn {
-    display: inline-block;
     background-color: var(--nav-active);
     color: var(--btn-text);
-    padding: 10px 15px;
-    margin: 5px 5px 5px 0;
-    border-radius: 5px;
+    padding: 8px 12px;
+    border-radius: 4px;
     font-size: 0.9em;
-    transition: all 0.2s;
 }
-
-.btn:hover {
-    background-color: var(--link-color);
-    text-decoration: none;
-    color: var(--btn-text);
-    transform: translateY(-2px);
-}
+.btn:hover { background-color: var(--link-color); text-decoration: none; }
 
 .btn-sm {
     display: inline-block;
@@ -281,54 +187,11 @@ section.active { display: block; }
     font-size: 0.85em;
     margin-right: 5px;
 }
-.btn-sm:hover {
-    background-color: var(--nav-active);
-    color: #fff;
-    text-decoration: none;
-}
+.btn-sm:hover { background-color: var(--nav-active); color: #fff; text-decoration: none; }
 
-ul.no-bullets { list-style-type: none; padding: 0; }
-.publication-list li, .project-item {
-    margin-bottom: 20px;
-    padding-bottom: 10px;
-    border-bottom: 1px solid var(--border-color);
-}
-
-/* Gallery Grid */
-.gallery-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-    gap: 15px;
-    margin-top: 20px;
-}
-
-.gallery-item {
-    background: var(--card-bg);
-    border: 1px solid var(--border-color);
-    border-radius: 5px;
-    overflow: hidden;
-    transition: transform 0.2s;
-}
-.gallery-item:hover { transform: scale(1.02); }
-.gallery-item img { width: 100%; height: 180px; object-fit: cover; display: block; }
-.gallery-item p {
-    padding: 10px; margin: 0; font-size: 0.9em; text-align: center;
-    background-color: rgba(0,0,0,0.05);
-}
-
-/* Projects Grid */
-.projects-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 20px;
-    margin-bottom: 30px;
-}
-.card {
-    background: var(--card-bg);
-    border: 1px solid var(--border-color);
-    padding: 20px;
-    border-radius: 8px;
-}
+/* General Lists */
+ul.no-bullets { list-style: none; padding: 0; }
+.publication-list li { margin-bottom: 15px; border-bottom: 1px solid var(--border-color); padding-bottom: 10px; }
 
 /* Footer */
 footer { 
@@ -336,14 +199,13 @@ footer {
     color: #bdc3c7; 
     text-align: center; 
     padding: 20px 0; 
-    margin-top: 40px;
+    margin-top: 40px; 
 }
 
 /* Mobile */
 @media (max-width: 700px) {
     .nav-tabs { flex-wrap: nowrap; overflow-x: auto; justify-content: flex-start; }
-    .nav-tabs a { white-space: nowrap; padding: 15px; }
-    .profile-container { flex-direction: column-reverse; }
-    .profile-image-wrapper { margin: 0 auto 20px auto; }
-    .theme-toggle { top: 10px; right: 10px; } /* Small adjustment for mobile screens */
+    .nav-tabs a { padding: 15px; white-space: nowrap; }
+    .about-grid { flex-direction: column-reverse; } /* Put content on top of image on mobile */
+    .theme-toggle { top: 10px; right: 10px; }
 }
