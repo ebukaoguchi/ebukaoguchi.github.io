@@ -10,7 +10,8 @@
     
     <link rel="stylesheet" href="style.css">
     
-    </head>
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+</head>
 <body>
 
     <header>
@@ -47,17 +48,26 @@
                         <li><strong>School of Computing</strong></li>
                         <li>University of Nebraska - Lincoln</li>
                         <li>Office: 114c Schorr Center, 1100 T St, Lincoln, NE 68588</li>
-                        <li>Phone: (531) 229-7046</li>
                         <li>Email: <a href="mailto:oguchiebuka919@gmail.com">oguchiebuka919@gmail.com</a></li>
                     </ul>
 
                     <h4>Brief Bio</h4>
                     <p>
-                        I am a 5th-year Ph.D. candidate in Computer Science and Engineering at the University of Nebraska, Lincoln, advised by Prof. Nirnimesh Ghose. I received my M.S. in Computer Applied Technology from the Changchun University of Science and Technology, China, in 2020. I obtained my B.Eng in Electronic and Computer Engineering from Nnamdi Azikiwe University, Awka, Nigeria, in 2016.
+                        I am a Ph.D. Candidate in Computer Science and Engineering at the University of Nebraska-Lincoln, advised by Prof. Nirnimesh Ghose. <strong>I expect to graduate in August 2025.</strong> My academic journey spans three continents: I received my M.S. in Computer Applied Technology from Changchun University of Science and Technology, China (2020), and my B.Eng in Electronic and Computer Engineering from Nnamdi Azikiwe University, Nigeria (2016).
                     </p>
 
                     <h4>Research Interests</h4>
-                    <p>My research focuses on cybersecurity across the agricultural, vehicular, machine learning, and molecular sectors. I specialize in ensuring message integrity verification and authentication for emerging wireless networks.</p>
+                    <p>
+                        My research secures the <strong>critical infrastructure of emerging wireless networks</strong>. I specialize in <strong>message integrity and authentication</strong> across diverse and challenging environments, including:
+                    </p>
+                    <ul style="margin-top:5px; margin-bottom:15px;">
+                        <li><strong>Agricultural IoT</strong> (Underground sensor networks)</li>
+                        <li><strong>Autonomous Vehicles</strong> (V2X security)</li>
+                        <li><strong>Molecular Communication</strong> (Nano-scale security)</li>
+                    </ul>
+                    <p>
+                        I combine <strong>machine learning</strong> with <strong>cryptographic protocols</strong> to build resilient systems that can withstand sophisticated adversarial attacks.
+                    </p>
                     
                     <div class="highlight-box">
                         <p>
@@ -71,8 +81,24 @@
                             <a href="Research_Statement.pdf" target="_blank" class="btn">Research Statement</a>
                             <a href="Diversity_Statement.pdf" target="_blank" class="btn">Diversity Statement</a>
                             <a href="Teaching_Statement.pdf" target="_blank" class="btn">Teaching Statement</a>
+                            <a href="Sample_Syllabus.pdf" target="_blank" class="btn">Sample Syllabus</a>
                         </div>
                     </div>
+
+                    <div class="news-box">
+                        <h3>⚡ Latest News</h3>
+                        <ul>
+                            <li>
+                                <strong>August 2025:</strong> Winner of the Ph.D. Dissertation Award, University of Nebraska Lincoln!
+                                <br>
+                                <a href="Dissertation.pdf" class="btn-sm" target="_blank">Read Dissertation</a>
+                                <a href="Philip's Dissertation.pptx" class="btn-sm" target="_blank">View Slides</a>
+                            </li>
+                            <li><strong>Feb 2025:</strong> Submitted paper on "Soil Assisted Trust-Establishment" to IEEE Transactions on Wireless Communications.</li>
+                            <li><strong>Jan 2025:</strong> Submitted "Systematization of Knowledge..." paper to IEEE Transactions on Molecular Communications.</li>
+                        </ul>
+                    </div>
+
                 </div>
                 
                 <div class="profile-image-wrapper">
@@ -84,6 +110,12 @@
         <section id="research">
             <h2>Research & Publications</h2>
             <ul class="publication-list">
+                <li>
+                    <strong>"Authentication and Message Integrity Verification for Emerging Wireless Networks" (Ph.D. Dissertation)</strong>, University of Nebraska-Lincoln, August 2025.
+                    <br>
+                    <a href="Dissertation.pdf" class="btn-sm" target="_blank">Download PDF</a>
+                    <a href="Philip's Dissertation.pptx" class="btn-sm" target="_blank">Download Slides</a>
+                </li>
                 <li>
                     <strong>"STUN: Secret-Free Trust-Establishment for Underground Wireless Networks,"</strong> in Proc. of IEEE INFOCOM Wrkshp on Wireless-Sec: 5G & Beyond Wireless Security, Virtual Event, May 2022. 
                     <br>
@@ -143,8 +175,8 @@
                     <strong>Teaching Assistant:</strong> Cryptography & Security (CSCE 477/877) - Fall 2022
                     <br>Organized experiments, graded homework/labs, and supported students.
                     <br>
-                    <a href="Course_Syllabus.pdf" class="btn-sm" target="_blank">Syllabus</a>
-                    <a href="Course_Schedule.pdf" class="btn-sm" target="_blank">Schedule</a>
+                    <a href="Sample_Syllabus.pdf" class="btn-sm" target="_blank">Download Syllabus</a>
+                    <a href="Course_Schedule.pdf" class="btn-sm" target="_blank">Course Schedule</a>
                 </li>
             </ul>
             
@@ -280,71 +312,3 @@
 
     <footer>
         <p>&copy; 2025 Ebuka Philip Oguchi | Built with Code & ☕</p>
-    </footer>
-
-    <script>
-        // 1. Tab Switching Logic
-        function openTab(tabName) {
-            const sections = document.querySelectorAll("section");
-            sections.forEach(section => section.classList.remove('active'));
-
-            const tabLinks = document.querySelectorAll(".tab-link");
-            tabLinks.forEach(link => link.classList.remove("active"));
-
-            document.getElementById(tabName).classList.add('active');
-            
-            const activeLink = document.querySelector(`.tab-link[data-tab="${tabName}"]`);
-            if (activeLink) activeLink.classList.add("active");
-        }
-
-        // Prevent default jump behavior for links
-        document.querySelectorAll('.tab-link').forEach(link => {
-            link.addEventListener('click', function(e) {
-                e.preventDefault();
-            });
-        });
-
-        // 2. Dark Mode Logic (Saves preference to browser memory)
-        function toggleTheme() {
-            const body = document.body;
-            body.classList.toggle("dark-mode");
-            
-            // Save preference to localStorage
-            if (body.classList.contains("dark-mode")) {
-                localStorage.setItem("theme", "dark");
-            } else {
-                localStorage.setItem("theme", "light");
-            }
-        }
-
-        // 3. Typing Effect for Title
-        const txt = "Ph.D. Candidate in Computer Science and Engineering";
-        const speed = 50; 
-        let i = 0;
-
-        function typeWriter() {
-            const element = document.getElementById("typing-text");
-            if (i < txt.length) {
-                element.innerHTML += txt.charAt(i);
-                i++;
-                setTimeout(typeWriter, speed);
-            }
-        }
-
-        // 4. Initialize everything on page load
-        window.onload = function() {
-            // Check for saved dark mode preference
-            const savedTheme = localStorage.getItem("theme");
-            if (savedTheme === "dark") {
-                document.body.classList.add("dark-mode");
-            }
-            
-            // Open default tab
-            openTab('about');
-            
-            // Start typing effect
-            typeWriter(); 
-        };
-    </script>
-</body>
-</html>
