@@ -3,38 +3,35 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Academic Portfolio of Ebuka Philip Oguchi, Ph.D. Candidate in Computer Science & Cybersecurity.">
+    <meta name="description" content="Academic Portfolio of Ebuka Philip Oguchi">
     <title>Ebuka Philip Oguchi - Ph.D. Candidate</title>
     
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
-    
     <link rel="stylesheet" href="style.css">
-    
     <link rel="icon" type="image/x-icon" href="favicon.ico">
 </head>
 <body>
 
     <header>
-        <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle Dark Mode" title="Switch Light/Dark Mode">
+        <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle Dark Mode">
             🌙 / ☀️
         </button>
 
         <div class="header-content">
             <h1>Ebuka Philip Oguchi</h1>
-            <p id="typing-text"></p> 
-            <noscript><p>Ph.D. Candidate in Computer Science and Engineering</p></noscript>
+            <p>Ph.D. Candidate in Computer Science and Engineering</p>
         </div>
     </header>
 
     <nav class="nav-tabs">
-        <a href="#" class="tab-link active" data-tab="about" onclick="openTab('about')">About Me</a>
-        <a href="#" class="tab-link" data-tab="research" onclick="openTab('research')">Publications</a>
-        <a href="#" class="tab-link" data-tab="projects" onclick="openTab('projects')">Research</a>
-        <a href="#" class="tab-link" data-tab="experience" onclick="openTab('experience')">Experience</a>
-        <a href="#" class="tab-link" data-tab="awards" onclick="openTab('awards')">Awards & Services</a>
-        <a href="#" class="tab-link" data-tab="resources" onclick="openTab('resources')">Resources</a>
-        <a href="#" class="tab-link" data-tab="media" onclick="openTab('media')">Media & Gallery</a>
-        <a href="#" class="tab-link" data-tab="contact" onclick="openTab('contact')">Contact</a>
+        <a class="tab-link active" onclick="openTab(event, 'about')">About Me</a>
+        <a class="tab-link" onclick="openTab(event, 'research')">Publications</a>
+        <a class="tab-link" onclick="openTab(event, 'projects')">Research</a>
+        <a class="tab-link" onclick="openTab(event, 'experience')">Experience</a>
+        <a class="tab-link" onclick="openTab(event, 'awards')">Awards & Services</a>
+        <a class="tab-link" onclick="openTab(event, 'resources')">Resources</a>
+        <a class="tab-link" onclick="openTab(event, 'media')">Media & Gallery</a>
+        <a class="tab-link" onclick="openTab(event, 'contact')">Contact</a>
     </nav>
 
     <div class="content">
@@ -44,13 +41,22 @@
             
             <div class="profile-container">
                 <div class="profile-text">
-                    <ul class="contact-info no-bullets">
-                        <li><strong>School of Computing</strong></li>
-                        <li>University of Nebraska - Lincoln</li>
-                        <li>Office: 114c Schorr Center, 1100 T St, Lincoln, NE 68588</li>
-                        <li>Phone: (531) 229-7046</li>
-                        <li>Email: <a href="mailto:oguchiebuka919@gmail.com">oguchiebuka919@gmail.com</a></li>
-                    </ul>
+                    
+                    <div class="highlight-box">
+                        <p>
+                            <span class="microphone">🎤</span>
+                            <span class="job-market">I am currently on the job market!</span>
+                        </p>
+                        <p>Here are my application materials:</p>
+                        <div class="button-group">
+                            <a href="CV.pdf" target="_blank" class="btn">Download CV</a>
+                            <a href="Cover_Letter.pdf" target="_blank" class="btn">Cover Letter</a>
+                            <a href="Research_Statement.pdf" target="_blank" class="btn">Research Statement</a>
+                            <a href="Diversity_Statement.pdf" target="_blank" class="btn">Diversity Statement</a>
+                            <a href="Teaching_Statement.pdf" target="_blank" class="btn">Teaching Statement</a>
+                            <a href="Sample_Syllabus.pdf" target="_blank" class="btn">Sample Syllabus</a>
+                        </div>
+                    </div>
 
                     <h4>Brief Bio</h4>
                     <p>
@@ -69,40 +75,31 @@
                     <p>
                         I combine <strong>machine learning</strong> with <strong>cryptographic protocols</strong> to build resilient systems that can withstand sophisticated adversarial attacks.
                     </p>
+                </div>
+                
+                <div class="profile-image-wrapper">
+                    <img src="philippo_copy.JPG" alt="Ebuka Philip Oguchi" class="profile-img">
                     
-                    <div class="highlight-box">
-                        <p>
-                            <span class="microphone">🎤</span>
-                            <span class="job-market">I am currently on the job market!</span>
-                        </p>
-                        <p>Here are my application materials:</p>
-                        <div class="button-group">
-                            <a href="CV.pdf" target="_blank" class="btn">Download CV</a>
-                            <a href="Cover_Letter.pdf" target="_blank" class="btn">Cover Letter</a>
-                            <a href="Research_Statement.pdf" target="_blank" class="btn">Research Statement</a>
-                            <a href="Diversity_Statement.pdf" target="_blank" class="btn">Diversity Statement</a>
-                            <a href="Teaching_Statement.pdf" target="_blank" class="btn">Teaching Statement</a>
-                        </div>
-                    </div>
+                    <ul class="contact-info no-bullets">
+                        <li><strong>School of Computing</strong></li>
+                        <li>University of Nebraska - Lincoln</li>
+                        <li>Office: 114c Schorr Center</li>
+                        <li><a href="mailto:oguchiebuka919@gmail.com">oguchiebuka919@gmail.com</a></li>
+                    </ul>
 
                     <div class="news-box">
                         <h3>⚡ Latest News</h3>
                         <ul>
                             <li>
-                                <strong>August 2025:</strong> Winner of the Ph.D. Dissertation Award, University of Nebraska Lincoln!
+                                <strong>August 2025:</strong> Winner of the Ph.D. Dissertation Award!
                                 <br>
-                                <a href="Dissertation.pdf" class="btn-sm" target="_blank">Read Dissertation</a>
-                                <a href="Philip's Dissertation.pptx" class="btn-sm" target="_blank">View Slides</a>
+                                <a href="Dissertation.pdf" class="btn-sm" target="_blank">PDF</a>
+                                <a href="Philip's Dissertation.pptx" class="btn-sm" target="_blank">Slides</a>
                             </li>
-                            <li><strong>Feb 2025:</strong> Submitted paper on "Soil Assisted Trust-Establishment" to IEEE Transactions on Wireless Communications.</li>
-                            <li><strong>Jan 2025:</strong> Submitted "Systematization of Knowledge..." paper to IEEE Transactions on Molecular Communications.</li>
+                            <li><strong>Feb 2025:</strong> Submitted paper to IEEE TWC.</li>
+                            <li><strong>Jan 2025:</strong> Submitted paper to IEEE TMBMC.</li>
                         </ul>
                     </div>
-
-                </div>
-                
-                <div class="profile-image-wrapper">
-                    <img src="philippo_copy.JPG" alt="Ebuka Philip Oguchi" class="profile-img">
                 </div>
             </div>
         </section>
@@ -300,11 +297,9 @@
             <div class="contact-card">
                 <p>I am available for interviews and research collaborations.</p>
                 <p><strong>Email:</strong> <a href="mailto:oguchiebuka919@gmail.com">oguchiebuka919@gmail.com</a></p>
-                <p><strong>University Email:</strong> <a href="mailto:eoguchi2@huskers.unl.edu">eoguchi2@huskers.unl.edu</a></p>
                 <div class="social-links" style="margin-top: 20px;">
                     <a href="https://www.linkedin.com/in/ebuka-oguchi-18326a166/" target="_blank" class="btn">LinkedIn</a>
                     <a href="https://github.com/ebukaoguchi" target="_blank" class="btn">GitHub</a>
-                    <a href="https://scholar.google.com/citations?user=b1miVfEAAAAJ&hl=en" target="_blank" class="btn">Google Scholar</a>
                 </div>
             </div>
         </section>
@@ -319,27 +314,26 @@
     </footer>
 
     <script>
-        // 1. Tab Switching Logic
-        function openTab(tabName) {
-            const sections = document.querySelectorAll("section");
-            sections.forEach(section => section.classList.remove('active'));
+        function openTab(evt, tabName) {
+            // Hide all sections
+            var sections = document.querySelectorAll("section");
+            sections.forEach(function(section) {
+                section.classList.remove("active");
+            });
 
-            const tabLinks = document.querySelectorAll(".tab-link");
-            tabLinks.forEach(link => link.classList.remove("active"));
+            // Remove active class from all tabs
+            var tablinks = document.querySelectorAll(".tab-link");
+            tablinks.forEach(function(link) {
+                link.classList.remove("active");
+            });
 
-            document.getElementById(tabName).classList.add('active');
+            // Show current section and activate tab
+            document.getElementById(tabName).classList.add("active");
             
-            const activeLink = document.querySelector(`.tab-link[data-tab="${tabName}"]`);
-            if (activeLink) activeLink.classList.add("active");
+            // Add active class to the clicked button
+            if(evt) evt.currentTarget.classList.add("active");
         }
 
-        document.querySelectorAll('.tab-link').forEach(link => {
-            link.addEventListener('click', function(e) {
-                e.preventDefault();
-            });
-        });
-
-        // 2. Dark Mode Logic
         function toggleTheme() {
             const body = document.body;
             body.classList.toggle("dark-mode");
@@ -351,28 +345,17 @@
             }
         }
 
-        // 3. Typing Effect
-        const txt = "Ph.D. Candidate in Computer Science and Engineering";
-        const speed = 50; 
-        let i = 0;
-
-        function typeWriter() {
-            const element = document.getElementById("typing-text");
-            if (i < txt.length) {
-                element.innerHTML += txt.charAt(i);
-                i++;
-                setTimeout(typeWriter, speed);
-            }
-        }
-
-        // 4. Initialize
+        // Initialize on load
         window.onload = function() {
             const savedTheme = localStorage.getItem("theme");
             if (savedTheme === "dark") {
                 document.body.classList.add("dark-mode");
             }
-            openTab('about');
-            typeWriter(); 
+            
+            // Manually activate the first tab ('About Me')
+            document.getElementById("about").classList.add("active");
+            // Highlight the first link in the nav
+            document.querySelector(".tab-link").classList.add("active");
         };
     </script>
 </body>
