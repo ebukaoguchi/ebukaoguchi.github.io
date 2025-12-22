@@ -10,7 +10,8 @@
     
     <link rel="stylesheet" href="style.css">
     
-    </head>
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+</head>
 <body>
 
     <header>
@@ -73,6 +74,16 @@
                             <a href="Teaching_Statement.pdf" target="_blank" class="btn">Teaching Statement</a>
                         </div>
                     </div>
+
+                    <div class="news-box">
+                        <h3>⚡ Latest News</h3>
+                        <ul>
+                            <li><strong>Feb 2025:</strong> Submitted paper on "Soil Assisted Trust-Establishment" to IEEE Transactions on Wireless Communications.</li>
+                            <li><strong>Jan 2025:</strong> Winner of the Ph.D. Dissertation Award, University of Nebraska Lincoln!</li>
+                            <li><strong>Jan 2025:</strong> Submitted "Systematization of Knowledge..." paper to IEEE Transactions on Molecular Communications.</li>
+                        </ul>
+                    </div>
+
                 </div>
                 
                 <div class="profile-image-wrapper">
@@ -280,6 +291,10 @@
 
     <footer>
         <p>&copy; 2025 Ebuka Philip Oguchi | Built with Code & ☕</p>
+        
+        <div style="margin-top: 20px; display: flex; justify-content: center;">
+            <p style="font-size: 0.8em; opacity: 0.7;">(Add your ClustrMaps code here)</p>
+        </div>
     </footer>
 
     <script>
@@ -297,19 +312,17 @@
             if (activeLink) activeLink.classList.add("active");
         }
 
-        // Prevent default jump behavior for links
         document.querySelectorAll('.tab-link').forEach(link => {
             link.addEventListener('click', function(e) {
                 e.preventDefault();
             });
         });
 
-        // 2. Dark Mode Logic (Saves preference to browser memory)
+        // 2. Dark Mode Logic
         function toggleTheme() {
             const body = document.body;
             body.classList.toggle("dark-mode");
             
-            // Save preference to localStorage
             if (body.classList.contains("dark-mode")) {
                 localStorage.setItem("theme", "dark");
             } else {
@@ -317,7 +330,7 @@
             }
         }
 
-        // 3. Typing Effect for Title
+        // 3. Typing Effect
         const txt = "Ph.D. Candidate in Computer Science and Engineering";
         const speed = 50; 
         let i = 0;
@@ -331,18 +344,13 @@
             }
         }
 
-        // 4. Initialize everything on page load
+        // 4. Initialize
         window.onload = function() {
-            // Check for saved dark mode preference
             const savedTheme = localStorage.getItem("theme");
             if (savedTheme === "dark") {
                 document.body.classList.add("dark-mode");
             }
-            
-            // Open default tab
             openTab('about');
-            
-            // Start typing effect
             typeWriter(); 
         };
     </script>
