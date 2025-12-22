@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Academic Portfolio of Ebuka Philip Oguchi">
     <title>Ebuka Philip Oguchi - Ph.D. Candidate</title>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
@@ -11,9 +12,14 @@
 <body>
 
     <header>
-        <button class="theme-toggle" onclick="toggleTheme()">🌙 / ☀️</button>
-        <h1>Ebuka Philip Oguchi</h1>
-        <p>Ph.D. Candidate in Computer Science and Engineering</p>
+        <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle Dark Mode">
+            🌙 / ☀️
+        </button>
+
+        <div class="header-content">
+            <h1>Ebuka Philip Oguchi</h1>
+            <p>Ph.D. Candidate in Computer Science and Engineering</p>
+        </div>
     </header>
 
     <nav class="nav-tabs">
@@ -21,143 +27,264 @@
         <a class="tab-link" onclick="openTab(event, 'research')">Publications</a>
         <a class="tab-link" onclick="openTab(event, 'projects')">Research</a>
         <a class="tab-link" onclick="openTab(event, 'experience')">Experience</a>
-        <a class="tab-link" onclick="openTab(event, 'awards')">Awards</a>
+        <a class="tab-link" onclick="openTab(event, 'awards')">Awards & Services</a>
         <a class="tab-link" onclick="openTab(event, 'resources')">Resources</a>
-        <a class="tab-link" onclick="openTab(event, 'media')">Media</a>
+        <a class="tab-link" onclick="openTab(event, 'media')">Media & Gallery</a>
         <a class="tab-link" onclick="openTab(event, 'contact')">Contact</a>
     </nav>
 
     <div class="content">
-
+        
         <section id="about" class="active">
-            <div class="about-grid">
-                
-                <div class="about-left">
-                    <img src="philippo_copy.JPG" alt="Ebuka Philip Oguchi" class="profile-img">
-                    
+            <h2>About Me</h2>
+            
+            <div class="profile-container">
+                <div class="profile-text">
                     <ul class="contact-info no-bullets">
-                        <li><strong>University of Nebraska-Lincoln</strong></li>
-                        <li>Office: 114c Schorr Center</li>
-                        <li>Lincoln, NE 68588</li>
-                        <li><a href="mailto:oguchiebuka919@gmail.com">oguchiebuka919@gmail.com</a></li>
+                        <li><strong>School of Computing</strong></li>
+                        <li>University of Nebraska - Lincoln</li>
+                        <li>Office: 114c Schorr Center, 1100 T St, Lincoln, NE 68588</li>
+                        <li>Email: <a href="mailto:oguchiebuka919@gmail.com">oguchiebuka919@gmail.com</a></li>
                     </ul>
-                </div>
 
-                <div class="about-right">
+                    <h4>Brief Bio</h4>
+                    <p>
+                        I am a Ph.D. Candidate in Computer Science and Engineering at the University of Nebraska-Lincoln, advised by Prof. Nirnimesh Ghose. I expect to graduate in August 2025. My academic journey spans three continents: I received my M.S. in Computer Applied Technology from Changchun University of Science and Technology, China (2020), and my B.Eng in Electronic and Computer Engineering from Nnamdi Azikiwe University, Nigeria (2016).
+                    </p>
+
+                    <h4>Research Interests</h4>
+                    <p>
+                        My research secures the <strong>critical infrastructure of emerging wireless networks</strong>. I specialize in <strong>message integrity and authentication</strong> across diverse and challenging environments, including:
+                    </p>
+                    <ul style="margin-top:5px; margin-bottom:15px;">
+                        <li><strong>Agricultural IoT</strong> (Underground sensor networks)</li>
+                        <li><strong>Autonomous Vehicles</strong> (V2X security)</li>
+                        <li><strong>Molecular Communication</strong> (Nano-scale security)</li>
+                    </ul>
+                    <p>
+                        I combine <strong>machine learning</strong> with <strong>cryptographic protocols</strong> to build resilient systems that can withstand sophisticated adversarial attacks.
+                    </p>
                     
                     <div class="highlight-box">
                         <p>
-                            <span class="microphone">🎤</span> 
-                            <span class="job-market">I am on the job market!</span>
+                            <span class="microphone">🎤</span>
+                            <span class="job-market">I am currently on the job market!</span>
                         </p>
+                        <p>Here are my application materials:</p>
                         <div class="button-group">
                             <a href="CV.pdf" target="_blank" class="btn">Download CV</a>
                             <a href="Cover_Letter.pdf" target="_blank" class="btn">Cover Letter</a>
                             <a href="Research_Statement.pdf" target="_blank" class="btn">Research Statement</a>
-                            <a href="Teaching_Statement.pdf" target="_blank" class="btn">Teaching Statement</a>
                             <a href="Diversity_Statement.pdf" target="_blank" class="btn">Diversity Statement</a>
-                            <a href="Sample_Syllabus.pdf" target="_blank" class="btn">Syllabus</a>
+                            <a href="Teaching_Statement.pdf" target="_blank" class="btn">Teaching Statement</a>
+                            <a href="Sample_Syllabus.pdf" target="_blank" class="btn">Sample Syllabus</a>
                         </div>
                     </div>
 
-                    <h3>About Me</h3>
-                    <p>
-                        I am a Ph.D. Candidate at the University of Nebraska-Lincoln, advised by Prof. Nirnimesh Ghose. <strong>I expect to graduate in August 2025.</strong> My research secures the <strong>critical infrastructure of emerging wireless networks</strong> (Agricultural IoT, V2X, Molecular Communication) using machine learning and cryptography.
-                    </p>
-
                     <div class="news-box">
                         <h3>⚡ Latest News</h3>
-                        <ul class="no-bullets">
+                        <ul>
                             <li>
-                                <strong>August 2025:</strong> Winner of the Ph.D. Dissertation Award!
-                                <a href="Dissertation.pdf" class="btn-sm" target="_blank">PDF</a>
-                                <a href="Philip's Dissertation.pptx" class="btn-sm" target="_blank">Slides</a>
+                                <strong>August 2025:</strong> Winner of the Ph.D. Dissertation Award, University of Nebraska Lincoln!
+                                <br>
+                                <a href="Dissertation.pdf" class="btn-sm" target="_blank">Read Dissertation</a>
+                                <a href="Philip's Dissertation.pptx" class="btn-sm" target="_blank">View Slides</a>
                             </li>
-                            <li><strong>Feb 2025:</strong> Submitted paper to IEEE TWC.</li>
-                            <li><strong>Jan 2025:</strong> Submitted paper to IEEE TMBMC.</li>
+                            <li><strong>Feb 2025:</strong> Submitted paper on "Soil Assisted Trust-Establishment" to IEEE TWC.</li>
+                            <li><strong>Jan 2025:</strong> Submitted "Systematization of Knowledge..." paper to IEEE TMBMC.</li>
                         </ul>
                     </div>
+                </div>
+                
+                <div class="profile-image-wrapper">
+                    <img src="philippo_copy.JPG" alt="Ebuka Philip Oguchi" class="profile-img">
                 </div>
             </div>
         </section>
 
         <section id="research">
-            <h2>Publications</h2>
-            <ul class="publication-list no-bullets">
+            <h2>Research & Publications</h2>
+            <ul class="publication-list">
                 <li>
                     <strong>"Authentication and Message Integrity Verification for Emerging Wireless Networks" (Ph.D. Dissertation)</strong>, 2025.
-                    <br><a href="Dissertation.pdf" class="btn-sm">PDF</a> <a href="Philip's Dissertation.pptx" class="btn-sm">Slides</a>
+                    <br><a href="Dissertation.pdf" class="btn-sm" target="_blank">PDF</a> <a href="Philip's Dissertation.pptx" class="btn-sm" target="_blank">Slides</a>
                 </li>
                 <li>
                     <strong>"STUN: Secret-Free Trust-Establishment..."</strong> IEEE INFOCOM Wrkshp 2022.
-                    <br><a href="OGUCHI_INFOCOMWkshp22.pdf" class="btn-sm">PDF</a>
+                    <br><a href="OGUCHI_INFOCOMWkshp22.pdf" class="btn-sm" target="_blank">PDF</a> <a href="OGUCHI_INFOCOMWkshp22.pptx" class="btn-sm" target="_blank">PPT</a>
                 </li>
                 <li>
                     <strong>"VET: Autonomous Vehicular Credential Verification..."</strong> EAI SecureComm 2023.
-                    <br><a href="OGUCHI_SECURECOM23.pdf" class="btn-sm">PDF</a>
+                    <br><a href="OGUCHI_SECURECOM23.pdf" class="btn-sm" target="_blank">PDF</a> <a href="OGUCHI_SECURECOM23.pptx" class="btn-sm" target="_blank">PPT</a>
+                </li>
+                 <li>
+                    <strong>"Soil Assisted Trust-Establishment..."</strong> Under Review IEEE TWC 2025.
                 </li>
             </ul>
         </section>
 
         <section id="projects">
             <h2>Research Projects</h2>
-            <p><strong>Agricultural IoT Security:</strong> Securing underground sensor networks. Funded by NSF.</p>
-            <p><strong>Autonomous Vehicle Security:</strong> V2X integrity using motion vectors. Funded by NCESR.</p>
-            <p><strong>Molecular Communication:</strong> Securing nano-scale biological networks. Funded by NSF.</p>
+            <div class="project-item">
+                <h3>Agricultural IoT Security</h3>
+                <p>Tackling the essential issue of building trust within agricultural IoT network applications. Funded by NSF.</p>
+            </div>
+            <div class="project-item">
+                <h3>Autonomous Vehicle Security</h3>
+                <p>Developing methods to prevent adversaries from seizing control of self-governing devices. Funded by NCESR.</p>
+            </div>
+            <div class="project-item">
+                <h3>Radio Frequency Fingerprinting (On-going)</h3>
+                <p>Research on fingerprinting in underground networks for message integrity verification. Funded by NSF.</p>
+            </div>
+            <div class="project-item">
+                <h3>Molecular Communication Security (On-going)</h3>
+                <p>Investigating lightweight approaches to secure communication between nanodevices in biological environments. Funded by NSF.</p>
+            </div>
         </section>
 
         <section id="experience">
             <h2>Experience</h2>
-            <p><strong>Teaching Assistant:</strong> Cryptography & Security (CSCE 477/877) <a href="Sample_Syllabus.pdf" class="btn-sm">Syllabus</a></p>
-            <p><strong>Mentorship:</strong> Google CSRMP, iAAMCS.</p>
+            <h3>Teaching</h3>
+            <ul>
+                <li>
+                    <strong>Teaching Assistant:</strong> Cryptography & Security (CSCE 477/877) - Fall 2022
+                    <br>Organized experiments, graded homework/labs, and supported students.
+                    <br>
+                    <a href="Sample_Syllabus.pdf" class="btn-sm" target="_blank">Download Syllabus</a>
+                    <a href="Course_Schedule.pdf" class="btn-sm" target="_blank">Course Schedule</a>
+                </li>
+            </ul>
+            
+            <h3>Industry</h3>
+            <ul>
+                <li><strong>Internship:</strong> Electronic Development Institute, Awka (2015). Projects involving remote control of home appliances using infrared sensors.</li>
+            </ul>
+
+            <h3>Mentorship</h3>
+            <ul>
+                <li><strong>Google CS Research Mentorship Program (CSRMP)</strong> - <a href="https://research.google/programs-and-events/csrmp/recipients/?filtertab=2023" target="_blank">Recipient</a></li>
+                <li><strong>iAAMCS:</strong> The Institute for African American Mentoring in Computing Sciences</li>
+                <li><strong>Mentees:</strong> Mr. Hakim Lado (Ph.D. student) and Ms. Arielle Monson (Undergraduate).</li>
+            </ul>
         </section>
 
         <section id="awards">
-            <h2>Awards</h2>
+            <h2>Awards and Honors</h2>
             <ul>
-                <li>Ph.D. Dissertation Award (2025)</li>
-                <li>Dohrmann Fellowship (2023)</li>
+                <li><strong>Ph.D. Dissertation Award</strong> (2025) - School of Computing, UNL</li>
+                <li><strong>Mary E. and Elmer H. Dohrmann Fellowship</strong> (2023) - UNL</li>
+                <li><strong>Chinese Government Scholarship</strong> (2018) - Changchun University</li>
+                <li><strong>Microsoft Azure ML Scholar</strong> (Sept 2020)</li>
+            </ul>
+
+            <h2>Professional Service</h2>
+            <ul>
+                <li><strong>Conference Reviewer:</strong> EAI SecureComm (2024), ACM WiSec (2024)</li>
+                <li><strong>Journal Reviewer:</strong> IEEE Transactions on Industrial Informatics, ACM Transactions on Cyber-Physical Systems</li>
+                <li><strong>Judge:</strong> UNL College of Engineering Poster Fair (2024)</li>
+            </ul>
+
+            <h2>Certifications</h2>
+            <ul class="cert-list">
+                <li>Cybersecurity Incident Response Handler (U.S. Army, 2025)</li>
+                <li>Cybersecurity Operational Training Experience (U.S. Army, 2025)</li>
+                <li>Machine Learning Summer School (Oxford, 2022)</li>
+                <li>AWS Machine Learning Foundations (Udacity, 2020)</li>
             </ul>
         </section>
 
         <section id="resources">
             <h2>Resources</h2>
-            <p>Conference Rankings, Writing Guides, USRP Tutorials.</p>
+            <div class="resource-block">
+                <h3>Conference Rankings</h3>
+                <ul>
+                    <li><a href="https://sites.cs.ucsb.edu/~almeroth/conf/stats/" target="_blank">Networking Conferences Stats</a></li>
+                    <li><a href="https://people.engr.tamu.edu/guofei/sec_conf_stat.htm" target="_blank">Security Conferences Stats</a></li>
+                </ul>
+            </div>
+            <div class="resource-block">
+                <h3>Tutorials</h3>
+                <p>Universal Software Radio Peripheral (USRP) LabVIEW Tutorials: 
+                    <a href="USRP_Labview0.zip">Part 1</a> | 
+                    <a href="USRP_Labview2.zip">Part 2</a> | 
+                    <a href="USRP_Labview3.zip">Part 3</a>
+                </p>
+            </div>
         </section>
 
         <section id="media">
-            <h2>Media & Gallery</h2>
-            <p>Photos and Personal Projects.</p>
+            <h2>Personal Projects</h2>
+            <div class="projects-grid">
+                <div class="card">
+                    <h3>WEP/WPA2 Crack</h3>
+                    <p>Cryptoanalysis on personal wireless networks. <br> 
+                    <a href="https://github.com/ebukaoguchi/WPA2-CRACK" target="_blank" class="btn-sm">GitHub</a> 
+                    <a href="WPA2_Crack.pdf" target="_blank" class="btn-sm">Report</a></p>
+                </div>
+                <div class="card">
+                    <h3>Molecular Security</h3>
+                    <p>Error correction in molecular environments. <br> 
+                    <a href="https://github.com/ebukaoguchi/Exploring-Security-Measures-for-Molecular-Communication" target="_blank" class="btn-sm">GitHub</a> 
+                    <a href="Exploring_Security_Measures_in_Molecular_Communication-2.pdf" target="_blank" class="btn-sm">Report</a></p>
+                </div>
+                <div class="card">
+                    <h3>IoT Mutual Auth</h3>
+                    <p>Secure authentication against MITM attacks. <br> 
+                    <a href="https://github.com/ebukaoguchi/Proverif-Automatic-Security-Verification" target="_blank" class="btn-sm">GitHub</a> 
+                    <a href="Mutual_Auth_Project_Paper.pdf" target="_blank" class="btn-sm">Report</a></p>
+                </div>
+            </div>
+
+            <h2>Photo Gallery</h2>
+            <div class="gallery-grid">
+                <div class="gallery-item"><img src="Disney_spring.jpeg" alt="Disney"><p>Disney Springs</p></div>
+                <div class="gallery-item"><img src="Disney_spring2.jpeg" alt="Disney Bridge"><p>Disney Bridge</p></div>
+                <div class="gallery-item"><img src="Oak_lake.jpeg" alt="Lincoln"><p>4th of July, Lincoln</p></div>
+                <div class="gallery-item"><img src="Msc_graduation.jpeg" alt="MSc Grad"><p>MSc Graduation</p></div>
+                <div class="gallery-item"><img src="Bsc_graduation.jpeg" alt="BSc Grad"><p>BSc Graduation</p></div>
+                <div class="gallery-item"><img src="IEEE_CNS.jpeg" alt="IEEE CNS"><p>IEEE CNS Conference</p></div>
+                <div class="gallery-item"><img src="Omaha_zoo.jpeg" alt="Zoo"><p>Omaha Zoo</p></div>
+            </div>
         </section>
 
         <section id="contact">
-            <h2>Contact</h2>
-            <p>Email: <a href="mailto:oguchiebuka919@gmail.com">oguchiebuka919@gmail.com</a></p>
+            <h2>Contact Me</h2>
+            <div class="contact-card">
+                <p>I am available for interviews and research collaborations.</p>
+                <p><strong>Email:</strong> <a href="mailto:oguchiebuka919@gmail.com">oguchiebuka919@gmail.com</a></p>
+                <div class="social-links" style="margin-top: 20px;">
+                    <a href="https://www.linkedin.com/in/ebuka-oguchi-18326a166/" target="_blank" class="btn">LinkedIn</a>
+                    <a href="https://github.com/ebukaoguchi" target="_blank" class="btn">GitHub</a>
+                </div>
+            </div>
         </section>
-
     </div>
 
     <footer>
         <p>&copy; 2025 Ebuka Philip Oguchi</p>
+        <div style="margin-top: 20px; font-size: 0.8em; opacity: 0.7;">
+            (Add ClustrMaps Code)
+        </div>
     </footer>
 
     <script>
         function openTab(evt, tabName) {
-            // 1. Hide all sections
+            // Hide all sections
             var sections = document.querySelectorAll("section");
             sections.forEach(function(section) {
                 section.classList.remove("active");
             });
 
-            // 2. Remove "active" class from all tab links
+            // Remove active class from all tabs
             var tablinks = document.querySelectorAll(".tab-link");
             tablinks.forEach(function(link) {
                 link.classList.remove("active");
             });
 
-            // 3. Show current section and add "active" class to clicked tab
+            // Show current section and activate tab
             document.getElementById(tabName).classList.add("active");
-            evt.currentTarget.classList.add("active");
+            if(evt) evt.currentTarget.classList.add("active");
         }
 
         function toggleTheme() {
@@ -165,12 +292,11 @@
             localStorage.setItem("theme", document.body.classList.contains("dark-mode") ? "dark" : "light");
         }
 
-        // Initialize
         window.onload = function() {
             if (localStorage.getItem("theme") === "dark") {
                 document.body.classList.add("dark-mode");
             }
-            // Manually activate the first tab ('About Me')
+            // Manually initialize the first tab
             document.getElementById("about").classList.add("active");
             document.querySelector(".tab-link").classList.add("active");
         };
