@@ -45,11 +45,11 @@
             <div class="profile-container">
                 <div class="profile-text">
                     <ul class="contact-info no-bullets">
-    <li><strong>School of Computing</strong></li>
-    <li>University of Nebraska - Lincoln</li>
-    <li>Office: 114c Schorr Center, 1100 T St, Lincoln, NE 68588</li>
-    <li>Email: <a href="mailto:oguchiebuka919@gmail.com">oguchiebuka919@gmail.com</a></li>
-</ul>
+                        <li><strong>School of Computing</strong></li>
+                        <li>University of Nebraska - Lincoln</li>
+                        <li>Office: 114c Schorr Center, 1100 T St, Lincoln, NE 68588</li>
+                        <li>Email: <a href="mailto:oguchiebuka919@gmail.com">oguchiebuka919@gmail.com</a></li>
+                    </ul>
 
                     <h4>Brief Bio</h4>
                     <p>
@@ -81,6 +81,7 @@
                             <a href="Research_Statement.pdf" target="_blank" class="btn">Research Statement</a>
                             <a href="Diversity_Statement.pdf" target="_blank" class="btn">Diversity Statement</a>
                             <a href="Teaching_Statement.pdf" target="_blank" class="btn">Teaching Statement</a>
+                            <a href="Sample_Syllabus.pdf" target="_blank" class="btn">Sample Syllabus</a>
                         </div>
                     </div>
 
@@ -91,7 +92,7 @@
                                 <strong>August 2025:</strong> Winner of the Ph.D. Dissertation Award, University of Nebraska Lincoln!
                                 <br>
                                 <a href="Dissertation.pdf" class="btn-sm" target="_blank">Read Dissertation</a>
-                                <a href="Philip's Dissertation.pdf" class="btn-sm" target="_blank">View Slides</a>
+                                <a href="Philip's Dissertation.pptx" class="btn-sm" target="_blank">View Slides</a>
                             </li>
                             <li><strong>Feb 2025:</strong> Submitted paper on "Soil Assisted Trust-Establishment" to IEEE Transactions on Wireless Communications.</li>
                             <li><strong>Jan 2025:</strong> Submitted "Systematization of Knowledge..." paper to IEEE Transactions on Molecular Communications.</li>
@@ -110,11 +111,10 @@
             <h2>Research & Publications</h2>
             <ul class="publication-list">
                 <li>
-                    <strong>Ph.D. Dissertation:</strong> 
-                    "Authentication and Message Integrity Verification for Emerging Wireless Networks"</strong>, University of Nebraska-Lincoln, August 2025.
+                    <strong>"Authentication and Message Integrity Verification for Emerging Wireless Networks" (Ph.D. Dissertation)</strong>, University of Nebraska-Lincoln, August 2025.
                     <br>
                     <a href="Dissertation.pdf" class="btn-sm" target="_blank">Download PDF</a>
-                    <a href="Philip's Dissertation.pdf" class="btn-sm" target="_blank">Download Slides</a>
+                    <a href="Philip's Dissertation.pptx" class="btn-sm" target="_blank">Download Slides</a>
                 </li>
                 <li>
                     <strong>"STUN: Secret-Free Trust-Establishment for Underground Wireless Networks,"</strong> in Proc. of IEEE INFOCOM Wrkshp on Wireless-Sec: 5G & Beyond Wireless Security, Virtual Event, May 2022. 
@@ -129,7 +129,7 @@
                     <a href="OGUCHI_SECURECOM23.pptx" class="btn-sm" target="_blank">PPT</a>
                 </li>
                 <li>
-                    <strong>"Soil Assisted Trust-Establishment For Underground Internet-of-Things,"</strong> under review to IEEE Transactions on Network Science, February 2025.
+                    <strong>"Soil Assisted Trust-Establishment For Underground Internet-of-Things,"</strong> under review to IEEE Transactions on Wireless Communications, February 2025.
                 </li>
                 <li>
                     <strong>"Systematization of Knowledge for Security in Molecular and Nano-communications,"</strong> under review to IEEE Transactions on Molecular, Biological, and Multi-Scale Communications, January 2025.
@@ -312,68 +312,3 @@
 
     <footer>
         <p>&copy; 2025 Ebuka Philip Oguchi | Built with Code & ☕</p>
-        
-        <div style="margin-top: 20px; display: flex; justify-content: center;">
-            <p style="font-size: 0.8em; opacity: 0.7;">(Add your ClustrMaps code here)</p>
-        </div>
-    </footer>
-
-    <script>
-        // 1. Tab Switching Logic
-        function openTab(tabName) {
-            const sections = document.querySelectorAll("section");
-            sections.forEach(section => section.classList.remove('active'));
-
-            const tabLinks = document.querySelectorAll(".tab-link");
-            tabLinks.forEach(link => link.classList.remove("active"));
-
-            document.getElementById(tabName).classList.add('active');
-            
-            const activeLink = document.querySelector(`.tab-link[data-tab="${tabName}"]`);
-            if (activeLink) activeLink.classList.add("active");
-        }
-
-        document.querySelectorAll('.tab-link').forEach(link => {
-            link.addEventListener('click', function(e) {
-                e.preventDefault();
-            });
-        });
-
-        // 2. Dark Mode Logic
-        function toggleTheme() {
-            const body = document.body;
-            body.classList.toggle("dark-mode");
-            
-            if (body.classList.contains("dark-mode")) {
-                localStorage.setItem("theme", "dark");
-            } else {
-                localStorage.setItem("theme", "light");
-            }
-        }
-
-        // 3. Typing Effect
-        const txt = "Ph.D. Candidate in Computer Science and Engineering";
-        const speed = 50; 
-        let i = 0;
-
-        function typeWriter() {
-            const element = document.getElementById("typing-text");
-            if (i < txt.length) {
-                element.innerHTML += txt.charAt(i);
-                i++;
-                setTimeout(typeWriter, speed);
-            }
-        }
-
-        // 4. Initialize
-        window.onload = function() {
-            const savedTheme = localStorage.getItem("theme");
-            if (savedTheme === "dark") {
-                document.body.classList.add("dark-mode");
-            }
-            openTab('about');
-            typeWriter(); 
-        };
-    </script>
-</body>
-</html>
