@@ -100,6 +100,11 @@
                             <li><strong>Jan 2025:</strong> Submitted paper to IEEE TMBMC.</li>
                         </ul>
                     </div>
+
+                    <div style="margin-top: 20px; width: 100%; max-width: 180px; opacity: 0.9;">
+                        <script type="text/javascript" id="mapmyvisitors" src="//mapmyvisitors.com/map.js?d=B6wTyqsKc2zJovbLQq3V_kFtEhXNIShASyNA5sfe5Xg&cl=ffffff&w=a"></script>
+                    </div>
+
                 </div>
             </div>
         </section>
@@ -308,30 +313,22 @@
 
     <footer>
         <p>&copy; 2025 Ebuka Philip Oguchi | Built with Code & ☕</p>
-        
-        <div style="margin-top: 20px; display: flex; justify-content: center;">
-            <script type="text/javascript" id="mapmyvisitors" src="//mapmyvisitors.com/map.js?d=B6wTyqsKc2zJovbLQq3V_kFtEhXNIShASyNA5sfe5Xg&cl=ffffff&w=a"></script>
-        </div>
     </footer>
 
     <script>
         function openTab(evt, tabName) {
-            // Hide all sections
             var sections = document.querySelectorAll("section");
             sections.forEach(function(section) {
                 section.classList.remove("active");
             });
 
-            // Remove active class from all tabs
             var tablinks = document.querySelectorAll(".tab-link");
             tablinks.forEach(function(link) {
                 link.classList.remove("active");
             });
 
-            // Show current section and activate tab
             document.getElementById(tabName).classList.add("active");
             
-            // Add active class to the clicked button
             if(evt) evt.currentTarget.classList.add("active");
         }
 
@@ -346,16 +343,12 @@
             }
         }
 
-        // Initialize on load
         window.onload = function() {
             const savedTheme = localStorage.getItem("theme");
             if (savedTheme === "dark") {
                 document.body.classList.add("dark-mode");
             }
-            
-            // Manually activate the first tab ('About Me')
             document.getElementById("about").classList.add("active");
-            // Highlight the first link in the nav
             document.querySelector(".tab-link").classList.add("active");
         };
     </script>
