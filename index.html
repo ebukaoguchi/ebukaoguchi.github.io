@@ -28,14 +28,19 @@
     </header>
 
     <nav class="nav-tabs">
-        <a class="tab-link active" onclick="openTab(event, 'about')">About Me</a>
-        <a class="tab-link" onclick="openTab(event, 'research')">Publications</a>
-        <a class="tab-link" onclick="openTab(event, 'projects')">Research</a>
-        <a class="tab-link" onclick="openTab(event, 'experience')">Experience</a>
-        <a class="tab-link" onclick="openTab(event, 'awards')">Awards & Services</a>
-        <a class="tab-link" onclick="openTab(event, 'resources')">Resources</a>
-        <a class="tab-link" onclick="openTab(event, 'media')">Media & Gallery</a>
-        <a class="tab-link" onclick="openTab(event, 'contact')">Contact</a>
+        <div class="menu-icon" onclick="toggleMenu()">
+            ☰ Menu
+        </div>
+        <div class="nav-links" id="navLinks">
+            <a class="tab-link active" onclick="openTab(event, 'about')">About Me</a>
+            <a class="tab-link" onclick="openTab(event, 'research')">Publications</a>
+            <a class="tab-link" onclick="openTab(event, 'projects')">Research</a>
+            <a class="tab-link" onclick="openTab(event, 'experience')">Experience</a>
+            <a class="tab-link" onclick="openTab(event, 'awards')">Awards & Services</a>
+            <a class="tab-link" onclick="openTab(event, 'resources')">Resources</a>
+            <a class="tab-link" onclick="openTab(event, 'media')">Media & Gallery</a>
+            <a class="tab-link" onclick="openTab(event, 'contact')">Contact</a>
+        </div>
     </nav>
 
     <div class="content">
