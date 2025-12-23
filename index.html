@@ -13,8 +13,8 @@
 <body>
 
     <header>
-        <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle Dark Mode">
-            🌙 / ☀️
+        <button class="theme-toggle" id="themeBtn" onclick="toggleTheme()" aria-label="Toggle Dark Mode">
+            🌙
         </button>
 
         <div class="header-content">
@@ -396,24 +396,35 @@
             document.getElementById(tabName).classList.add("active");
             
             if(evt) evt.currentTarget.classList.add("active");
-        }
-
-        function toggleTheme() {
+        }function toggleTheme() {
             const body = document.body;
+            const btn = document.getElementById("themeBtn");
+            
             body.classList.toggle("dark-mode");
             
+            // Check current state AND update icon
             if (body.classList.contains("dark-mode")) {
                 localStorage.setItem("theme", "dark");
+                btn.innerHTML = "☀️"; // Show Sun (to switch back to light)
             } else {
                 localStorage.setItem("theme", "light");
+                btn.innerHTML = "🌙"; // Show Moon (to switch to dark)
             }
         }
 
+        // Initialize on load
         window.onload = function() {
             const savedTheme = localStorage.getItem("theme");
+            const btn = document.getElementById("themeBtn");
+            
             if (savedTheme === "dark") {
                 document.body.classList.add("dark-mode");
+                btn.innerHTML = "☀️"; // Ensure icon matches loaded theme
+            } else {
+                btn.innerHTML = "🌙";
             }
+            
+            // Activate 'About Me' tab by default
             document.getElementById("about").classList.add("active");
             document.querySelector(".tab-link").classList.add("active");
         };
