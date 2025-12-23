@@ -238,3 +238,127 @@ footer {
     .profile-container { flex-direction: column-reverse; }
     .theme-toggle { top: 10px; right: 10px; }
 }
+/* =========================================
+   PROJECTS & GALLERY (Screenshot Style)
+   ========================================= */
+
+/* 1. Projects Grid Layout */
+.projects-grid {
+    display: grid;
+    /* This creates the 2-column look, but stacks on mobile */
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); 
+    gap: 25px;
+    margin-bottom: 40px;
+}
+
+/* 2. Project Cards (Clean White Look) */
+.card {
+    background: #ffffff;
+    border: 1px solid #e1e4e8; /* Subtle border like GitHub */
+    border-radius: 8px;
+    padding: 25px;
+    transition: transform 0.2s, box-shadow 0.2s;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.05);
+    border-color: #007acc; /* Highlight color on hover */
+}
+
+.card h3 {
+    margin-top: 0;
+    margin-bottom: 10px;
+    font-size: 1.25rem;
+    color: #24292e;
+}
+
+.card p {
+    font-size: 0.95rem;
+    color: #586069;
+    margin-bottom: 20px;
+    flex-grow: 1;
+}
+
+/* 3. "GitHub/Report" Buttons (Gray Style) */
+.btn-sm {
+    display: inline-block;
+    background-color: #f3f4f6; /* Light gray background */
+    border: 1px solid #d1d5da;
+    color: #24292e;
+    padding: 5px 12px;
+    border-radius: 6px;
+    font-size: 0.85em;
+    font-weight: 600;
+    margin-right: 8px;
+    text-decoration: none;
+    transition: background-color 0.2s;
+}
+
+.btn-sm:hover {
+    background-color: #e1e4e8; /* Slightly darker on hover */
+    text-decoration: none;
+    border-color: #8f959e;
+}
+
+/* 4. Photo Gallery (Polaroid Style) */
+.gallery-grid {
+    display: grid;
+    /* Creates the 4-column look */
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.gallery-item {
+    background: #ffffff;
+    border: 1px solid #e1e4e8;
+    border-radius: 8px;
+    overflow: hidden; /* Keeps image inside rounded corners */
+    transition: transform 0.2s;
+}
+
+.gallery-item:hover {
+    transform: scale(1.02);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 180px; /* Fixed height for uniformity */
+    object-fit: cover;
+    display: block;
+}
+
+.gallery-item p {
+    background-color: #f6f8fa; /* Light gray caption area */
+    color: #24292e;
+    padding: 10px;
+    margin: 0;
+    font-size: 0.9em;
+    text-align: center;
+    border-top: 1px solid #e1e4e8;
+    font-weight: 500;
+}
+
+/* Dark Mode Adjustments for these new cards */
+body.dark-mode .card, 
+body.dark-mode .gallery-item {
+    background: #1e1e1e;
+    border-color: #333;
+}
+body.dark-mode .card h3 { color: #e0e0e0; }
+body.dark-mode .card p { color: #aaa; }
+body.dark-mode .btn-sm {
+    background-color: #2d333b;
+    border-color: #444;
+    color: #c9d1d9;
+}
+body.dark-mode .gallery-item p {
+    background-color: #252526;
+    color: #e0e0e0;
+    border-top-color: #333;
+}
