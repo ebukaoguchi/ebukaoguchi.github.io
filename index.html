@@ -455,5 +455,25 @@
             document.querySelector(".tab-link").classList.add("active");
         };
     </script>
+    <script>
+        // ... your existing code ...
+
+        // NEW: Hamburger Menu Logic
+        function toggleMenu() {
+            const navLinks = document.getElementById("navLinks");
+            navLinks.classList.toggle("show");
+        }
+        
+        // Auto-close menu when a link is clicked
+        var tabLinks = document.querySelectorAll(".tab-link");
+        tabLinks.forEach(function(link) {
+            link.addEventListener("click", function() {
+                var navLinks = document.getElementById("navLinks");
+                if (window.innerWidth <= 768) { 
+                    navLinks.classList.remove("show");
+                }
+            });
+        });
+    </script>
 </body>
 </html>
