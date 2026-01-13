@@ -974,8 +974,11 @@
                         <li>Department of Computer and Information Sciences</li>
                         <li>Spelman College</li>
                         <li>Starting: Spring 2026</li>
-                        <li><a href="/cdn-cgi/l/email-protection#adc2cad8cec5c4c8cfd8c6cc949c94edcac0ccc4c183cec2c0" class="email-link-sidebar"><span class="__cf_email__" data-cfemail="244b4351474c4d4146514f451d151d644349454d480a474b49">[email&#160;protected]</span></a></li>
-                        <li><a href="/cdn-cgi/l/email-protection#a0c5cfc7d5c3c8c992e0c8d5d3cbc5d2d38ed5cecc8ec5c4d5" class="email-link-sidebar"><span class="__cf_email__" data-cfemail="fa9f959d8f999293c8ba928f89919f8889d48f9496d49f9e8f">[email&#160;protected]</span></a></li>
+                       <li>
+  <a class="email-link-sidebar" href="mailto:oguchiebuka919@gmail.com">
+    oguchiebuka919@gmail.com
+  </a>
+</li>
                         <li style="margin-top: 15px;"><a href="CV.pdf" target="_blank" class="btn">Download CV</a></li>
                     </ul>
 
@@ -1280,47 +1283,64 @@
         <p>&copy; 2025 Ebuka Philip Oguchi | Built with Code & ☕</p>
     </footer>
 
-    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
-        function openTab(evt, tabName) {
-            var sections = document.querySelectorAll("section");
-            sections.forEach(function(section) {
-                section.classList.remove("active");
-            });
+   <script>
+  function openTab(evt, tabName) {
+    document.querySelectorAll("section").forEach((section) => {
+      section.classList.remove("active");
+    });
 
-            var tablinks = document.querySelectorAll(".tab-link");
-            tablinks.forEach(function(link) {
-                link.classList.remove("active");
-            });
+    document.querySelectorAll(".tab-link").forEach((link) => {
+      link.classList.remove("active");
+    });
 
-            document.getElementById(tabName).classList.add("active");
-            
-            if(evt) evt.currentTarget.classList.add("active");
-        }
+    document.getElementById(tabName).classList.add("active");
+    if (evt) evt.currentTarget.classList.add("active");
 
-        function toggleTheme() {
-            const body = document.body;
-            const btn = document.getElementById("themeBtn");
-            
-            body.classList.toggle("light-theme");
-            
-            if (body.classList.contains("light-theme")) {
-                localStorage.setItem("theme", "light");
-                btn.innerHTML = "☀️";
-            } else {
-                localStorage.setItem("theme", "dark");
-                btn.innerHTML = "🌙";
-            }
-        }
+    // auto-close mobile menu after choosing a tab
+    const navLinks = document.getElementById("navLinks");
+    if (window.innerWidth <= 768) navLinks.classList.remove("show");
+  }
 
-        window.onload = function() {
-            const savedTheme = localStorage.getItem("theme");
-            const btn = document.getElementById("themeBtn");
-            
-            if (savedTheme === "light") {
-                document.body.classList.add("light-theme");
-                btn.innerHTML = "☀️";
-            } else {
-                btn.innerHTML = "🌙";
-            }
-            
-            d
+  function toggleTheme() {
+    const body = document.body;
+    const btn = document.getElementById("themeBtn");
+
+    body.classList.toggle("light-theme");
+
+    if (body.classList.contains("light-theme")) {
+      localStorage.setItem("theme", "light");
+      btn.innerHTML = "☀️";
+    } else {
+      localStorage.setItem("theme", "dark");
+      btn.innerHTML = "🌙";
+    }
+  }
+
+  function toggleMenu() {
+    const navLinks = document.getElementById("navLinks");
+    navLinks.classList.toggle("show");
+  }
+
+  window.onload = function () {
+    const savedTheme = localStorage.getItem("theme");
+    const btn = document.getElementById("themeBtn");
+
+    if (savedTheme === "light") {
+      document.body.classList.add("light-theme");
+      btn.innerHTML = "☀️";
+    } else {
+      btn.innerHTML = "🌙";
+    }
+
+    // ensure About is active on load
+    document.querySelectorAll("section").forEach((s) => s.classList.remove("active"));
+    document.getElementById("about").classList.add("active");
+
+    document.querySelectorAll(".tab-link").forEach((l) => l.classList.remove("active"));
+    const firstTab = document.querySelector('.tab-link[onclick*="about"]');
+    if (firstTab) firstTab.classList.add("active");
+  };
+
+</script>
+</body>
+</html>
