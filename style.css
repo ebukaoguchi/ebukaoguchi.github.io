@@ -179,7 +179,17 @@ section.active { display: block; animation: fadeIn 0.4s; }
     margin-top: 15px;
     margin-bottom: 15px;
 }
+/* Ensure the hover glow overlay never blocks clicks */
+.card::after {
+  pointer-events: none;
+  z-index: 0;
+}
 
+/* Put the real content above the overlay */
+.card > * {
+  position: relative;
+  z-index: 1;
+}
 .social-icons-sidebar a {
     color: #800000; 
     font-size: 1.4rem; 
