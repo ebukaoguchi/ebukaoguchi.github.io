@@ -71,15 +71,15 @@
     --sidebar-w: 260px;
   }
   html[data-theme="light"]{
-    --bg: #eef1f7;
-    --panel: #f8faff;
-    --panel-hi: #e2e7f2;
-    --line-actual: #c9d2e5;
-    --text: #0f1a2e;
-    --text-dim: #3d4c6e;
-    --text-faint: #7883a3;
-    --teal: #0b7f75;
-    --amber: #a8690c;
+    --bg: #f5efe6;
+    --panel: #fffaf2;
+    --panel-hi: #eee3d4;
+    --line-actual: #d8c9b6;
+    --text: #29231d;
+    --text-dim: #62584e;
+    --text-faint: #8c7e70;
+    --teal: #147b73;
+    --amber: #a46116;
   }
   body, .sidebar, .card, .interest, .id-card, .tag, .scan-frame img{
     transition: background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease;
@@ -135,7 +135,7 @@
     padding:2.4rem 1.6rem;
     border-right:1px solid var(--line-actual);
     display:flex; flex-direction:column;
-    background:linear-gradient(180deg, rgba(13,20,32,0.4), rgba(13,20,32,0.85));
+    background:linear-gradient(180deg, color-mix(in srgb, var(--panel) 72%, transparent), var(--panel));
     backdrop-filter: blur(6px);
   }
   .sidebar .name{font-family:var(--mono); font-size:1rem; font-weight:600; line-height:1.4;}
@@ -238,20 +238,25 @@
 
   .id-card{
     margin-top:2.2rem; background:var(--panel); border:1px solid var(--line-actual); border-radius:6px;
-    padding:1.3rem 1.5rem; font-family:var(--mono); font-size:0.85rem; color:var(--text-dim);
-    display:grid; gap:0.45rem; cursor:pointer; transition:border-color 0.15s;
+    padding:1.4rem 1.5rem; font-family:var(--mono); font-size:0.85rem; color:var(--text-dim);
+    display:grid; grid-template-columns:1fr auto; gap:0.75rem 1.5rem; align-items:center;
+    transition:border-color 0.15s, box-shadow 0.15s;
   }
-  .id-card:hover, .id-card:focus-visible{border-color:var(--teal);}
-  .id-card .row{display:flex; gap:0.8rem;}
-  .id-card .k{color:var(--text-faint); min-width:88px;}
-  .id-card .v{color:var(--text);}
-  .id-card a{color:var(--teal);}
+  .id-card:hover{border-color:var(--teal); box-shadow:0 12px 28px rgba(0,0,0,0.10);}
+  .id-card-copy{min-width:0;}
+  .id-card-title{color:var(--text); font-size:1rem; font-weight:600;}
+  .id-card-meta{margin-top:0.35rem; color:var(--text-dim); font-family:var(--serif); font-size:0.92rem;}
   .cv-btn{
-    display:inline-flex; align-items:center; gap:0.5em; margin-top:0.6rem;
+    display:inline-flex; align-items:center; justify-content:center; gap:0.55em;
     background:var(--teal); color:#0d1420; font-family:var(--mono); font-weight:600;
-    font-size:0.82rem; padding:0.55rem 1rem; border-radius:4px;
+    font-size:0.8rem; padding:0.7rem 1rem; border-radius:4px; white-space:nowrap;
   }
+  .id-card .cv-btn{color:#071715;}
   .cv-btn:hover{text-decoration:none; filter:brightness(1.08);}
+  @media (max-width:600px){
+    .id-card{grid-template-columns:1fr;}
+    .cv-btn{justify-self:start;}
+  }
 
   /* ---------- tags / packet fields ---------- */
   .tag-grid{display:flex; flex-wrap:wrap; gap:0.6rem; margin-top:1.5rem;}
@@ -281,6 +286,18 @@
 
   /* ---------- publications ---------- */
   .pub-list{display:grid; gap:1.6rem; margin-top:0.5rem;}
+  .pub-subhead{
+    margin:1.2rem 0 -0.35rem;
+    padding-bottom:0.55rem;
+    border-bottom:1px solid var(--line-actual);
+    color:var(--teal);
+    font-family:var(--mono);
+    font-size:0.76rem;
+    font-weight:600;
+    letter-spacing:0.12em;
+    text-transform:uppercase;
+  }
+  .pub-subhead:first-child{margin-top:0;}
   .pub{display:grid; grid-template-columns:64px 1fr; gap:1.2rem;}
   @media (max-width:600px){.pub{grid-template-columns:1fr; gap:0.4rem;}}
   .pub-year{font-family:var(--mono); color:var(--text-faint); font-size:0.85rem; padding-top:0.15rem;}
@@ -335,6 +352,23 @@
   footer{max-width:var(--maxw); padding:3rem 0 1rem; color:var(--text-faint); font-family:var(--mono); font-size:0.78rem;}
   footer .contact-links{display:flex; gap:1.4rem; margin:1rem 0; flex-wrap:wrap;}
   footer .contact-links a{font-size:0.85rem;}
+  .visitor-map{
+    width:180px;
+    min-height:90px;
+    margin-top:1.5rem;
+    padding:0.65rem;
+    border:1px solid var(--line-actual);
+    border-radius:4px;
+    background:var(--panel);
+    overflow:hidden;
+  }
+  .visitor-map-label{
+    margin-bottom:0.45rem;
+    color:var(--text-faint);
+    font-size:0.62rem;
+    letter-spacing:0.08em;
+    text-transform:uppercase;
+  }
 
   ::selection{background:rgba(79,209,197,0.3); color:var(--text);}
 
@@ -377,15 +411,11 @@
 
     <nav id="mainNav" aria-label="Primary navigation">
       <a href="#about">About</a>
-      <a href="#publications">Publications</a>
       <a href="#research">Research</a>
-      <a href="#funding">Funding</a>
-      <a href="#experience">Experience</a>
-      <a href="#skills">Skills</a>
-      <a href="#awards">Awards &amp; Service</a>
-      <a href="#resources">Resources</a>
-      <a href="#implementations">Projects</a>
-      <a href="#gallery">Gallery</a>
+      <a href="#publications">Publications</a>
+      <a href="#teaching">Teaching</a>
+      <a href="#news">News</a>
+      <a href="#service">Service</a>
       <a href="#contact">Contact</a>
     </nav>
 
@@ -399,13 +429,13 @@
 
     <!-- ABOUT / HERO -->
     <section id="about" class="hero">
-      <div class="eyebrow">record 001 · identity</div>
+      <div class="eyebrow">faculty profile · secure wireless systems</div>
       <div class="hero-grid">
         <div>
           <h1>Ebuka Philip Oguchi</h1>
-          <div class="subtitle">Assistant Professor · Ph.D. in Computer Science</div>
-          <p>I am an Assistant Professor in the Department of Computer and Information Sciences at Spelman College. I received my Ph.D. in Computer Science (4.0/4.0 GPA) from the University of Nebraska–Lincoln, School of Computing, advised by Prof. Nirnimesh Ghose (2025).</p>
-          <p class="journey">My academic journey spans three continents: <b>M.S. in Computer Applied Technology</b>, Changchun University of Science and Technology (China), advised by Prof. Fang Ming, and <b>B.Eng. in Electronic and Computer Engineering</b>, Nnamdi Azikiwe University (Nigeria), with a capstone project on biometric course registration using fingerprint authentication.</p>
+          <div class="subtitle">Assistant Professor · Cybersecurity &amp; Wireless Systems</div>
+          <p>I develop authentication, message-integrity verification, and trust-establishment mechanisms for emerging wireless and cyber-physical systems. My research combines wireless measurements, physical-layer security, signal processing, machine learning, and lightweight protocols to protect communication in resource-constrained environments.</p>
+          <p class="journey">I am an Assistant Professor in the Department of Computer and Information Sciences at <b>Spelman College</b>. I received my Ph.D. in Computer Science from the University of Nebraska–Lincoln in 2025, advised by Prof. Nirnimesh Ghose. My academic journey also includes an M.S. from Changchun University of Science and Technology in China and a B.Eng. from Nnamdi Azikiwe University in Nigeria.</p>
 
           <div class="links-row">
             <a href="https://scholar.google.com/citations?user=b1miVfEAAAAJ&hl=en">Google Scholar</a>
@@ -419,7 +449,7 @@
             <span></span><span class="c2"></span><span class="c3"></span>
             <img src="philippo_copy.JPG" alt="Portrait of Ebuka Philip Oguchi">
           </div>
-          <div class="scan-label">IDENTITY: VERIFIED</div>
+          <div class="scan-label">CYBERSECURITY · WIRELESS SYSTEMS</div>
         </div>
       </div>
 
@@ -428,20 +458,73 @@
           fill="none" style="stroke:var(--teal);" stroke-width="1.5"/>
       </svg>
 
-      <div class="id-card" id="cvCard" role="link" tabindex="0" aria-label="Open CV">
-        <div class="field" style="margin-bottom:0.2rem;">CV</div>
-        <div class="row"><span class="k">Dept.</span><span class="v">Computer &amp; Information Sciences</span></div>
-        <div class="row"><span class="k">Institution</span><span class="v">Spelman College</span></div>
-        <div class="row"><span class="k">Email</span><span class="v"><a href="mailto:ebukaoguchi@spelman.edu">ebukaoguchi@spelman.edu</a></span></div>
-        <a class="cv-btn" href="CVs.pdf">↓ Download CV</a>
+      <div class="id-card">
+        <div class="id-card-copy">
+          <div class="field" style="margin-bottom:0.35rem;">Curriculum Vitae</div>
+          <div class="id-card-title">Academic appointment, publications, teaching, and service</div>
+          <div class="id-card-meta">Ebuka Philip Oguchi · Spelman College</div>
+        </div>
+        <a class="cv-btn" href="CVs.pdf" aria-label="Download Ebuka Philip Oguchi's curriculum vitae as a PDF">
+          <span aria-hidden="true">↓</span> Download CV · PDF
+        </a>
       </div>
     </section>
 
     <!-- PUBLICATIONS -->
     <section id="publications">
-      <h2><span class="idx">002</span> Publications</h2>
+      <h2><span class="idx">004</span> Publications</h2>
       <div class="pub-list">
+        <h3 class="pub-subhead">Peer-reviewed conference papers</h3>
+        <div class="pub">
+          <div class="pub-year">2023</div>
+          <div>
+            <div class="pub-title">VET: Autonomous Vehicular Credential Verification Using Trajectory and Motion Vectors</div>
+            <div class="pub-venue">EAI International Conference on Security and Privacy in Communication Networks (SecureComm), Hong Kong, October 2023</div>
+            <div class="pub-links">
+              <a href="OGUCHI_SECURECOM23.pdf">PDF</a>
+              <a href="OGUCHI_SECURECOM23.pptx">Slides</a>
+            </div>
+          </div>
+        </div>
 
+        <div class="pub">
+          <div class="pub-year">2022</div>
+          <div>
+            <div class="pub-title">STUN: Secret-Free Trust-Establishment for Underground Wireless Networks</div>
+            <div class="pub-venue">IEEE INFOCOM Workshop on Wireless-Sec: 5G &amp; Beyond Wireless Security, May 2022</div>
+            <div class="pub-links">
+              <a href="OGUCHI_INFOCOMWkshp22.pdf">PDF</a>
+              <a href="OGUCHI_INFOCOMWkshp22.pptx">Slides</a>
+            </div>
+          </div>
+        </div>
+
+        <h3 class="pub-subhead">Submitted manuscripts</h3>
+        <div class="pub">
+          <div class="pub-year">submitted</div>
+          <div>
+            <div class="pub-title">LocaRadio: RF Fingerprint-Based Location Authentication for Wireless Networks</div>
+            <div class="pub-venue">Oguchi, E.; Lado, H.; Evans, R.; Menon, A.; Wang, B.; Ghose, N. — Submitted to the IEEE International Conference on Computing, Networking and Communications (ICNC).</div>
+          </div>
+        </div>
+
+        <div class="pub">
+          <div class="pub-year">submitted</div>
+          <div>
+            <div class="pub-title">Soil-Assisted Trust Establishment for Underground Internet-of-Things</div>
+            <div class="pub-venue">Oguchi, E.; Ghose, N.; Vuran, M.C. — Under review at IEEE Transactions on Dependable and Secure Computing.</div>
+          </div>
+        </div>
+
+        <div class="pub">
+          <div class="pub-year">submitted</div>
+          <div>
+            <div class="pub-title">Systematization of Knowledge for Security in Molecular and Nano-Communications</div>
+            <div class="pub-venue">Anderson, M.*; Duong, T.T.*; Oguchi, E.*; Wisniewska, A.; Ghose, N. — Under review at IEEE Transactions on Molecular, Biological, and Multi-Scale Communications. *Equal contribution.</div>
+          </div>
+        </div>
+
+        <h3 class="pub-subhead">Dissertation, theses, and posters</h3>
         <div class="pub">
           <div class="pub-year">2025</div>
           <div>
@@ -451,54 +534,6 @@
               <a href="Dissertation.pdf">PDF</a>
               <a href="Philip's Dissertation.pdf">Slides</a>
             </div>
-          </div>
-        </div>
-
-        <div class="pub">
-          <div class="pub-year">2022</div>
-          <div>
-            <div class="pub-title">STUN: Secret-Free Trust-Establishment for Underground Wireless Networks</div>
-            <div class="pub-venue">Proc. IEEE INFOCOM Workshop on Wireless-Sec: 5G &amp; Beyond Wireless Security, Virtual Event, May 2022</div>
-            <div class="pub-links">
-              <a href="OGUCHI_INFOCOMWkshp22.pdf">PDF</a>
-              <a href="OGUCHI_INFOCOMWkshp22.pptx">PPT</a>
-            </div>
-          </div>
-        </div>
-
-        <div class="pub">
-          <div class="pub-year">2023</div>
-          <div>
-            <div class="pub-title">VET: Autonomous Vehicular Credential Verification using Trajectory and Motion Vectors</div>
-            <div class="pub-venue">EAI International Conference on Security and Privacy in Communication Networks (SecureComm), Hong Kong, October 2023</div>
-            <div class="pub-links">
-              <a href="OGUCHI_SECURECOM23.pdf">PDF</a>
-              <a href="OGUCHI_SECURECOM23.pptx">PPT</a>
-            </div>
-          </div>
-        </div>
-
-        <div class="pub">
-          <div class="pub-year">2026</div>
-          <div>
-            <div class="pub-title">LocaRadio: RF Fingerprint-Based Location Authentication for Wireless Networks</div>
-            <div class="pub-venue">Oguchi, E.; Lado, H.; Evans, R.; Menon, A.; Wang, B.; Ghose, N. — Submitted to IEEE Consumer Communications &amp; Networking Conference (CCNC), 2026</div>
-          </div>
-        </div>
-
-        <div class="pub">
-          <div class="pub-year">under review</div>
-          <div>
-            <div class="pub-title">Soil-Assisted Trust Establishment for Underground Internet-of-Things</div>
-            <div class="pub-venue">Oguchi, E.; Ghose, N.; Vuran, M.C. — IEEE Transactions on Dependable and Secure Computing</div>
-          </div>
-        </div>
-
-        <div class="pub">
-          <div class="pub-year">under review</div>
-          <div>
-            <div class="pub-title">Systematization of Knowledge for Security in Molecular and Nano-Communications</div>
-            <div class="pub-venue">Anderson, M.*; Duong, T.T.*; Oguchi, E.*; Wisniewska, A.; Ghose, N. — IEEE Transactions on Molecular, Biological, and Multi-Scale Communications. *Equal contribution.</div>
           </div>
         </div>
 
@@ -519,14 +554,13 @@
             <div class="pub-links"><a href="Smoke image.pdf">Download Thesis</a></div>
           </div>
         </div>
-
       </div>
     </section>
 
     <!-- RESEARCH -->
     <section id="research">
-      <h2><span class="idx">003</span> Research</h2>
-      <p style="color:var(--text-dim); max-width:60ch;">My research secures the critical infrastructure of emerging wireless networks — cybersecurity and trust establishment, message integrity and authentication, physical-layer security, and location verification for resource-constrained and adversarial environments.</p>
+      <h2><span class="idx">002</span> Research</h2>
+      <p style="color:var(--text-dim); max-width:62ch;">My research develops authentication, message-integrity verification, and trust-establishment mechanisms for emerging wireless and cyber-physical systems, with particular attention to resource-constrained and adversarial environments.</p>
 
       <div class="interest-grid">
         <div class="interest"><div class="field">Domain: agri-iot</div><p>Underground sensor network security</p></div>
@@ -537,56 +571,65 @@
         <div class="interest"><div class="field">Domain: cs-ed</div><p>Broadening participation in computing — inclusive curriculum design</p></div>
       </div>
 
+      <div class="exp-block" style="margin-top:2rem;">
+        <div class="exp-label">Research Methods &amp; Platforms</div>
+        <p style="color:var(--text-dim); font-size:0.92rem;">
+          Wireless testbeds and software-defined radio · signal and channel analysis ·
+          machine learning · embedded prototyping · formal security verification ·
+          Python, MATLAB, C/C++, USRP, GNU Radio, and ProVerif
+        </p>
+      </div>
+
       <h3 style="margin-top:2.6rem; font-size:0.95rem; color:var(--text-dim); text-transform:uppercase; letter-spacing:0.08em; font-weight:500;">Active Projects</h3>
       <div class="card-grid">
         <div class="card">
-          <div class="field">NSF</div>
+          <div class="field">Research theme</div>
           <h3>Agricultural IoT Security</h3>
           <p><b style="color:var(--text-dim);">Goal —</b> Establishing trust in underground sensor networks where physical access is difficult.<br><b style="color:var(--text-dim);">Method —</b> Physical-layer channel features combined with lightweight cryptographic primitives, without draining sensor batteries.</p>
         </div>
         <div class="card">
-          <div class="field">NCESR</div>
+          <div class="field">NCESR-supported work</div>
           <h3>Autonomous Vehicle Security</h3>
-          <p><b style="color:var(--text-dim);">Goal —</b> Preventing adversarial takeover of self-driving cars and drones.<br><b style="color:var(--text-dim);">Method —</b> Real-time trajectory and motion-vector data verify incoming messages against physical vehicle behavior, detecting spoofing instantly.</p>
+          <p><b style="color:var(--text-dim);">Goal —</b> Detecting forged or inconsistent messages in connected and autonomous vehicle networks.<br><b style="color:var(--text-dim);">Method —</b> Trajectory and motion-vector information helps determine whether transmitted messages are consistent with observed vehicle behavior.</p>
         </div>
         <div class="card">
-          <div class="field">NSF · ongoing</div>
-          <h3>RF Fingerprinting</h3>
-          <p><b style="color:var(--text-dim);">Goal —</b> Identifying devices by their unique hardware imperfections.<br><b style="color:var(--text-dim);">Method —</b> Deep learning over signal characteristics in underground environments to build unique authentication fingerprints.</p>
+          <div class="field">Ongoing study</div>
+          <h3>Wireless Location &amp; Channel Fingerprinting</h3>
+          <p><b style="color:var(--text-dim);">Goal —</b> Authenticating wireless devices and transmissions using environment-dependent signal characteristics.<br><b style="color:var(--text-dim);">Method —</b> Signal processing and machine learning over channel measurements collected in underground and over-the-air environments.</p>
         </div>
         <div class="card">
-          <div class="field">NSF · ongoing</div>
+          <div class="field">Ongoing study</div>
           <h3>Molecular Communication Security</h3>
           <p><b style="color:var(--text-dim);">Goal —</b> Securing nano-scale communication in biological environments.<br><b style="color:var(--text-dim);">Method —</b> Lightweight protocols preventing bootstrapping attacks between nanodevices where traditional cryptography is too heavy.</p>
         </div>
         <div class="card">
-          <div class="field">Submitted 2026</div>
+          <div class="field">Submitted manuscript</div>
           <h3>LocaRadio: RF-Fingerprint Location Authentication</h3>
-          <p><b style="color:var(--text-dim);">Goal —</b> Verifying device location as an authentication factor for wireless networks.<br><b style="color:var(--text-dim);">Method —</b> RF-fingerprint-based location authentication, submitted to IEEE CNS 2026.</p>
+          <p><b style="color:var(--text-dim);">Goal —</b> Verifying device location as an authentication factor for wireless networks.<br><b style="color:var(--text-dim);">Method —</b> RF-fingerprint-based location authentication, submitted to IEEE ICNC.</p>
         </div>
       </div>
     </section>
 
     <!-- FUNDING -->
     <section id="funding">
-      <h2><span class="idx">004</span> Research Support</h2>
+      <h2><span class="idx">003</span> Research Support</h2>
       <div class="exp-block">
         <div class="exp-entry">
           <h3>Senior Personnel, NSF Center for Distributed Confidential Computing (CDCC)</h3>
           <div class="meta">2026 – Present</div>
-          <p>A $9,000,000 NSF Frontiers in Computing project focused on scalable and verifiable confidential computing — a multi-institutional flagship initiative with IU Bloomington, CMU, Duke, Ohio State, and Yale.</p>
+          <p>An NSF-supported multi-institutional research initiative focused on scalable and verifiable confidential computing.</p>
         </div>
         <div class="exp-entry">
           <h3>Collaborator, Google.org Cybersecurity Clinic Grant</h3>
           <div class="meta">2026 – Present</div>
-          <p>Supporting the establishment of the Spelman College Cybersecurity Clinic, providing pro-bono security services to under-resourced organizations, and integrating clinic operations into the new undergraduate Cybersecurity Curriculum Minor.</p>
+          <p>Supporting the development of the Spelman College Cybersecurity Clinic and its work with under-resourced organizations.</p>
         </div>
       </div>
     </section>
 
     <!-- LATEST NEWS -->
     <section id="news">
-      <h2><span class="idx">005</span> Latest News</h2>
+      <h2><span class="idx">006</span> Latest News</h2>
       <div class="timeline">
         <div class="tl-item">
           <div class="tl-date">JUN 2026</div>
@@ -598,7 +641,7 @@
         </div>
         <div class="tl-item">
           <div class="tl-date">2026</div>
-          <p>Joined as Senior Personnel on the $9M NSF Center for Distributed Confidential Computing (CDCC), and as a collaborator on the Google.org Cybersecurity Clinic Grant.</p>
+          <p>Joined the NSF Center for Distributed Confidential Computing as Senior Personnel and the Google.org Cybersecurity Clinic initiative as a collaborator.</p>
         </div>
         <div class="tl-item">
           <div class="tl-date">JAN 2026</div>
@@ -617,8 +660,8 @@
     </section>
 
     <!-- EXPERIENCE -->
-    <section id="experience">
-      <h2><span class="idx">006</span> Experience</h2>
+    <section id="teaching">
+      <h2><span class="idx">005</span> Teaching &amp; Mentoring</h2>
 
       <div class="exp-block">
         <div class="exp-label">Teaching</div>
@@ -643,34 +686,11 @@
       </div>
 
       <div class="exp-block">
-        <div class="exp-label">Research</div>
-        <div class="exp-entry">
-          <h3>Research Assistant, University of Nebraska–Lincoln</h3>
-          <div class="meta">2021 – 2025</div>
-          <ul class="plain">
-            <li><b>STUN Protocol Development —</b> authored the Secret-Free Trust Establishment for Underground Wireless Networks (STUN) protocol to secure bootstrapping in Agricultural IoT environments.</li>
-            <li><b>Autonomous Vehicle Security —</b> developed message-integrity verification systems using trajectory, motion vectors, and Doppler effects (VET protocol).</li>
-            <li><b>RF Fingerprinting —</b> implemented machine-learning-based authentication for underground and over-the-air (OTA) environments.</li>
-            <li><b>Molecular Communication —</b> investigated lightweight security protocols for nano-scale biological communication networks.</li>
-          </ul>
-        </div>
-      </div>
-
-      <div class="exp-block">
-        <div class="exp-label">Industry</div>
-        <div class="exp-entry">
-          <h3>Internship — Electronic Development Institute, Awka</h3>
-          <div class="meta">2015</div>
-          <p>Designed and prototyped a remote control system for home appliances using infrared sensor technology.</p>
-        </div>
-      </div>
-
-      <div class="exp-block">
-        <div class="exp-label">Mentorship &amp; Affiliations</div>
+        <div class="exp-label">Research Mentoring &amp; Affiliations</div>
         <ul class="plain">
           <li>Recipient, Google CS Research Mentorship Program (CSRMP)</li>
           <li>Member, Institute for African American Mentoring in Computing Sciences (iAAMCS)</li>
-          <li><b>Mentees —</b> Mr. Hakim Lado (Ph.D. student), Ms. Arielle Monson (Undergraduate)</li>
+          <li><b>Students mentored —</b> Hakim Lado (Ph.D. student) and Arielle Monson (undergraduate student)</li>
         </ul>
       </div>
 
@@ -683,33 +703,9 @@
       </div>
     </section>
 
-    <!-- SKILLS -->
-    <section id="skills">
-      <h2><span class="idx">007</span> Skills</h2>
-      <div class="tag-grid">
-        <span class="tag"><span class="field">ml</span>TensorFlow</span>
-        <span class="tag"><span class="field">ml</span>Keras</span>
-        <span class="tag"><span class="field">lang</span>Python</span>
-        <span class="tag"><span class="field">lang</span>MATLAB</span>
-        <span class="tag"><span class="field">lang</span>C++</span>
-        <span class="tag"><span class="field">lang</span>C</span>
-        <span class="tag"><span class="field">lang</span>Assembly / MIPS</span>
-        <span class="tag"><span class="field">radio</span>USRP</span>
-        <span class="tag"><span class="field">radio</span>GNU Radio</span>
-        <span class="tag"><span class="field">hw</span>Embedded Systems</span>
-        <span class="tag"><span class="field">hw</span>Breadboard Prototyping</span>
-        <span class="tag"><span class="field">hw</span>Circuit Design &amp; Testing</span>
-        <span class="tag"><span class="field">hw</span>Microcontroller Interfacing</span>
-        <span class="tag"><span class="field">net</span>Wireless Testbed Development</span>
-        <span class="tag"><span class="field">sec</span>NIST Cybersecurity Framework</span>
-        <span class="tag"><span class="field">sec</span>Incident Response</span>
-        <span class="tag"><span class="field">edu</span>Inclusive Pedagogy</span>
-      </div>
-    </section>
-
     <!-- AWARDS & SERVICE -->
-    <section id="awards">
-      <h2><span class="idx">008</span> Awards &amp; Service</h2>
+    <section id="service">
+      <h2><span class="idx">007</span> Service &amp; Recognition</h2>
 
       <div class="exp-block">
         <div class="exp-label">Awards &amp; Honors</div>
@@ -723,68 +719,22 @@
       <div class="exp-block">
         <div class="exp-label">Professional Service</div>
         <ul class="plain">
-          <li><b>Member, Departmental Curriculum Review Committee</b> (2026 – Present) — technical review and formal institutional approval of the Cybersecurity Clinic Capstone (CIS 200/300)</li>
           <li><b>Judge —</b> Spelman College Hack-A-Bot Competition (April 2026), UNL College of Engineering Poster Fair</li>
           <li><b>Journal Reviewer —</b> IEEE Transactions on Dependable and Secure Computing (2026), IEEE Transactions on Industrial Informatics, ACM Transactions on Cyber-Physical Systems (2025)</li>
           <li><b>Conference Reviewer —</b> EAI SecureComm, ACM WiSec</li>
         </ul>
       </div>
 
-      <div class="exp-block">
-        <div class="exp-label">Certifications &amp; Summer Schools</div>
-        <ul class="plain">
-          <li>Cybersecurity Incident Response Handler, U.S. Army (2025) — <a href="Oguchi Ebuka_CIRH 25-701 MTT Cyber Tatanka Certificate (40HRS).pdf">View</a></li>
-          <li>Cybersecurity Operational Training Experience, U.S. Army (2025) — <a href="Oguchi_COTE 25-701 DA Form 87 (2).pdf">View</a></li>
-          <li>Machine Learning Summer School, Oxford (2022) — <a href="OxML 2022, Certificate of participation_Ebuka Oguchi.pdf">View</a></li>
-          <li>Machine Learning Summer School, Indonesia (2020) — <a href="MLSS-Indo 2020.pdf">View</a></li>
-          <li>AWS Machine Learning Foundations, Udacity (2020) — <a href="AWS.pdf">View</a></li>
-        </ul>
-      </div>
-    </section>
-
-    <!-- RESOURCES -->
-    <section id="resources">
-      <h2><span class="idx">009</span> Resources</h2>
-
-      <div class="exp-block">
-        <div class="exp-label">Technical Tutorials — USRP / LabVIEW</div>
-        <p style="color:var(--text-dim); font-size:0.92rem; margin-bottom:0.8rem;">Practical guides for working with software-defined radio.</p>
-        <div class="pub-links">
-          <a href="USRP_Labview0.zip">Part 1 — Setup</a>
-          <a href="USRP_Labview2.zip">Part 2 — Tx/Rx</a>
-          <a href="USRP_Labview3.zip">Part 3 — Advanced</a>
-        </div>
-      </div>
-
-      <div class="res-cols">
-        <div>
-          <h3>Conference Rankings</h3>
-          <ul class="plain">
-            <li><a href="http://csrankings.org/">CSRankings.org</a></li>
-            <li><a href="https://sites.cs.ucsb.edu/~almeroth/conf/stats/">Networking Conferences Stats — K. Almeroth</a></li>
-            <li><a href="https://people.engr.tamu.edu/guofei/sec_conf_stat.htm">Security Conferences Stats — G. Gu</a></li>
-            <li><a href="http://jianying.space/conference-ranking.html">Crypto/Security Rankings — J. Zhou</a></li>
-          </ul>
-        </div>
-        <div>
-          <h3>Academic Writing Guides</h3>
-          <ul class="plain">
-            <li><a href="http://karpathy.github.io/2016/09/07/phd/">Surviving a PhD — Andrej Karpathy</a></li>
-            <li><a href="https://www.seas.upenn.edu/~andre/general/student_research_advice.html">Advice for Students Starting Research</a></li>
-            <li><a href="https://www.crockford.com/style.html">Elements of Style — Strunk &amp; White</a></li>
-          </ul>
-        </div>
-      </div>
     </section>
 
     <!-- TECHNICAL IMPLEMENTATIONS -->
     <section id="implementations">
-      <h2><span class="idx">010</span> Technical Implementations</h2>
+      <h2><span class="idx">008</span> Selected Technical Work</h2>
       <div class="card-grid">
         <div class="card">
           <div class="field">Cryptanalysis</div>
-          <h3>WEP/WPA2 Hack</h3>
-          <p>Cryptanalysis on personal wireless networks to demonstrate protocol vulnerabilities.</p>
+          <h3>Wireless Network Security Analysis</h3>
+          <p>Controlled laboratory analysis of weaknesses in legacy and contemporary wireless authentication protocols.</p>
           <div class="links"><a href="https://github.com/ebukaoguchi/WPA2-CRACK">GitHub</a><a href="WPA2_Crack.pdf">Report</a></div>
         </div>
         <div class="card">
@@ -808,32 +758,17 @@
       </div>
     </section>
 
-    <!-- GALLERY -->
-    <section id="gallery">
-      <h2><span class="idx">011</span> Photo Gallery</h2>
-      <div class="gallery">
-        <figure><img src="Disney_spring.jpeg" alt="Disney Springs"><figcaption>Disney Springs</figcaption></figure>
-        <figure><img src="Disney_spring2.jpeg" alt="Disney Bridge"><figcaption>Disney Bridge</figcaption></figure>
-        <figure><img src="Oak_lake.jpeg" alt="Lincoln 4th of July"><figcaption>4th of July, Lincoln</figcaption></figure>
-        <figure><img src="Msc_graduation.jpeg" alt="MSc Graduation"><figcaption>MSc Graduation, China</figcaption></figure>
-        <figure><img src="Bsc_graduation.jpeg" alt="BSc Graduation"><figcaption>BSc Graduation, Nigeria</figcaption></figure>
-        <figure><img src="IEEE_CNS.jpeg" alt="IEEE CNS Conference"><figcaption>IEEE CNS Conference</figcaption></figure>
-        <figure><img src="csc_tour2.jpeg" alt="Jilin Museum"><figcaption>Jilin Museum</figcaption></figure>
-        <figure><img src="csc_tour.jpeg" alt="Jilin Creative Park"><figcaption>Jilin Creative Park</figcaption></figure>
-        <figure><img src="NanHu.jpeg" alt="Nan Hu Park"><figcaption>Nan Hu Park</figcaption></figure>
-        <figure><img src="NanHu2.jpeg" alt="Nan Hu Park Tour"><figcaption>Nan Hu Park Tour</figcaption></figure>
-        <figure><img src="Omaha_zoo.jpeg" alt="Omaha Zoo"><figcaption>Omaha Zoo</figcaption></figure>
-        <figure><img src="Omaha_zoo2.jpeg" alt="Elephant at Zoo"><figcaption>Elephant at Zoo</figcaption></figure>
-      </div>
-    </section>
-
     <footer id="contact">
-      <div class="eyebrow">record 012 · contact</div>
+      <div class="eyebrow">faculty contact</div>
       <div>ebukaoguchi@spelman.edu</div>
       <div class="contact-links">
         <a href="https://www.linkedin.com/in/ebukaoguchi/">LinkedIn</a>
         <a href="https://github.com/ebukaoguchi">GitHub</a>
         <a href="https://scholar.google.com/citations?user=b1miVfEAAAAJ&hl=en">Google Scholar</a>
+      </div>
+      <div class="visitor-map" aria-label="Anonymous visitor location map">
+        <div class="visitor-map-label">Visitor map · approximate locations</div>
+        <script async id="mapmyvisitors" src="https://mapmyvisitors.com/map.js?d=B6wTyqsKc2zJovbLQq3V_kFtEhXNIShASyNA5sfe5Xg&amp;cl=4fd1c5&amp;w=a"></script>
       </div>
       <div style="margin-top:1.4rem; color:var(--text-faint);">© 2026 Ebuka Philip Oguchi</div>
     </footer>
@@ -842,16 +777,16 @@
 </div>
 
 <script>
-  // CV card: clicking anywhere opens the CV, except the email link
-  const cvCard = document.getElementById('cvCard');
-  function openCV(e){
-    if(e.target.closest('a')) return; // let the mailto/download links behave normally
-    window.open('CVs.pdf', '_blank');
-  }
-  cvCard.addEventListener('click', openCV);
-  cvCard.addEventListener('keydown', (e) => {
-    if(e.key === 'Enter' || e.key === ' '){ e.preventDefault(); window.open('CVs.pdf', '_blank'); }
-  });
+  // Present the page in a faculty-focused order while keeping each section directly linkable.
+  const mainContent = document.getElementById('main-content');
+  const researchSection = document.getElementById('research');
+  const supportSection = document.getElementById('funding');
+  const publicationsSection = document.getElementById('publications');
+  const teachingSection = document.getElementById('teaching');
+  const newsSection = document.getElementById('news');
+  mainContent.insertBefore(researchSection, publicationsSection);
+  researchSection.after(supportSection);
+  mainContent.insertBefore(teachingSection, newsSection);
 
   // theme toggle
   const themeBtn = document.getElementById('themeToggle');
@@ -895,7 +830,8 @@
   const obs = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
       if(entry.isIntersecting){
-        const id = entry.target.getAttribute('id');
+        const sectionId = entry.target.getAttribute('id');
+        const id = (sectionId === 'funding' || sectionId === 'implementations') ? 'research' : sectionId;
         navLinks.forEach(l => {
           const isActive = l.getAttribute('href') === '#' + id;
           l.classList.toggle('active', isActive);
