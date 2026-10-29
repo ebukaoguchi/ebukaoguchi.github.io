@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Teaching — Ebuka Philip Oguchi, Spelman College</title>
+<meta name="description" content="Teaching, educational leadership, and mentoring of Ebuka Philip Oguchi, Assistant Professor of Computer and Information Sciences at Spelman College.">
+<style>
+  :root{
+    --bg:#0b0e13; --panel:#12161f; --panel2:#171c28; --line:#232a3a;
+    --text:#e8ebf2; --muted:#9aa5ba; --accent:#5eb1ef; --accent2:#8be0c8;
+    --max:1020px;
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  html{scroll-behavior:smooth;}
+  body{background:var(--bg); color:var(--text); font-family:Georgia,'Times New Roman',serif; line-height:1.65;}
+  a{color:var(--accent); text-decoration:none;}
+  a:hover{text-decoration:underline;}
+  .wrap{max-width:var(--max); margin:0 auto; padding:0 22px;}
+
+  /* Header / nav */
+  header{border-bottom:1px solid var(--line); position:sticky; top:0; background:rgba(11,14,19,.94); backdrop-filter:blur(6px); z-index:10;}
+  .nav{display:flex; flex-wrap:wrap; align-items:center; justify-content:space-between; gap:10px; padding:14px 0;}
+  .brand{font-size:1.05rem; letter-spacing:.02em; color:var(--text);}
+  .brand small{display:block; font-size:.78rem; color:var(--muted); letter-spacing:.08em; text-transform:uppercase;}
+  nav.tabs{display:flex; gap:8px; flex-wrap:wrap;}
+  nav.tabs a{font-family:Helvetica,Arial,sans-serif; font-size:.85rem; letter-spacing:.06em; text-transform:uppercase;
+    padding:7px 14px; border:1px solid var(--line); border-radius:999px; color:var(--muted);}
+  nav.tabs a:hover{color:var(--text); text-decoration:none; border-color:var(--accent);}
+  nav.tabs a.current{color:#0b0e13; background:var(--accent); border-color:var(--accent); font-weight:bold;}
+
+  /* Hero */
+  .hero{padding:56px 0 30px; display:grid; grid-template-columns:1fr; gap:26px;}
+  @media(min-width:820px){ .hero{grid-template-columns:1.6fr .9fr;} }
+  .kicker{font-family:Helvetica,Arial,sans-serif; font-size:.78rem; letter-spacing:.22em; text-transform:uppercase; color:var(--accent2); margin-bottom:14px;}
+  h1{font-size:2.3rem; line-height:1.2; font-weight:normal;}
+  h1 em{color:var(--accent); font-style:normal;}
+  .hero p.lede{margin-top:16px; font-size:1.08rem; color:#cfd6e4; max-width:56ch;}
+  .glance{background:var(--panel); border:1px solid var(--line); border-radius:12px; padding:20px 22px; align-self:start;}
+  .glance h3{font-family:Helvetica,Arial,sans-serif; font-size:.75rem; letter-spacing:.18em; text-transform:uppercase; color:var(--muted); margin-bottom:12px;}
+  .glance dl{display:grid; grid-template-columns:auto 1fr; gap:6px 14px; font-size:.95rem;}
+  .glance dt{color:var(--muted); font-family:Helvetica,Arial,sans-serif; font-size:.82rem; padding-top:2px;}
+  .glance dd{color:var(--text);}
+  .portrait{width:100%; border-radius:12px; border:1px solid var(--line); display:block; margin-bottom:16px;}
+
+  /* Sections */
+  section{padding:38px 0 8px;}
+  .sec-head{display:flex; align-items:baseline; gap:14px; border-bottom:1px solid var(--line); padding-bottom:10px; margin-bottom:22px;}
+  .sec-num{font-family:Helvetica,Arial,sans-serif; color:var(--accent); font-size:.85rem; letter-spacing:.15em;}
+  h2{font-size:1.55rem; font-weight:normal;}
+  .sec-sub{color:var(--muted); margin:-12px 0 20px; max-width:68ch;}
+  p{margin-bottom:14px; color:#d6dbe7;}
+  .muted{color:var(--muted);}
+
+  /* Pathway explorer */
+  .pathway{display:flex; flex-wrap:wrap; gap:8px; margin-bottom:16px;}
+  .pathway button{font-family:Helvetica,Arial,sans-serif; font-size:.85rem; cursor:pointer;
+    background:var(--panel); color:var(--muted); border:1px solid var(--line); border-radius:999px; padding:8px 14px;}
+  .pathway button:hover{color:var(--text); border-color:var(--accent);}
+  .pathway button.active{background:var(--accent); color:#0b0e13; border-color:var(--accent); font-weight:bold;}
+  .pathway .arrow{align-self:center; color:var(--muted);}
+  .stage{background:var(--panel); border:1px solid var(--line); border-left:3px solid var(--accent); border-radius:10px; padding:20px 22px; min-height:132px;}
+  .stage h3{font-size:1.15rem; font-weight:normal; margin-bottom:6px;}
+  .stage h3 span{color:var(--accent); font-family:Helvetica,Arial,sans-serif; font-size:.8rem; letter-spacing:.12em; margin-right:8px;}
+  .stage p{margin:0; color:#cfd6e4;}
+
+  /* Cards */
+  .cards{display:grid; grid-template-columns:1fr; gap:14px;}
+  @media(min-width:760px){ .cards{grid-template-columns:1fr 1fr 1fr;} .cards.two{grid-template-columns:1fr 1fr;} }
+  .card{background:var(--panel); border:1px solid var(--line); border-radius:12px; padding:18px 20px;}
+  .card h3{font-size:1.05rem; font-weight:normal; margin-bottom:4px;}
+  .card .meta{font-family:Helvetica,Arial,sans-serif; font-size:.78rem; letter-spacing:.08em; text-transform:uppercase; color:var(--accent2); margin-bottom:8px;}
+  .card p{font-size:.95rem; margin:0; color:#c6cede;}
+  .tag{display:inline-block; font-family:Helvetica,Arial,sans-serif; font-size:.72rem; letter-spacing:.08em; text-transform:uppercase;
+    border:1px solid var(--accent2); color:var(--accent2); border-radius:999px; padding:2px 9px; margin-top:10px;}
+
+  /* Lists */
+  ul.clean{list-style:none;}
+  ul.clean li{padding:10px 0; border-bottom:1px solid var(--line); color:#d6dbe7;}
+  ul.clean li:last-child{border-bottom:none;}
+  ul.clean .when{font-family:Helvetica,Arial,sans-serif; font-size:.78rem; letter-spacing:.1em; color:var(--accent); text-transform:uppercase; display:block;}
+  .pub{margin-bottom:12px;}
+  .pub .venue{color:var(--muted); font-style:italic;}
+
+  footer{border-top:1px solid var(--line); margin-top:48px; padding:26px 0 40px; color:var(--muted); font-size:.92rem;}
+  footer .row{display:flex; flex-wrap:wrap; justify-content:space-between; gap:12px;}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap nav">
+    <div class="brand">Ebuka Philip Oguchi<small>Spelman College</small></div>
+    <nav class="tabs">
+      <a href="index.html">Research</a>
+      <a href="teaching.html" class="current">Teaching</a>
+    </nav>
+  </div>
+</header>
+
+<div class="wrap">
+
+  <!-- HERO -->
+  <div class="hero">
+    <div>
+      <div class="kicker">Faculty profile · Computer systems educator</div>
+      <h1>I teach how computers work — <em>from source code to silicon to the operating system</em> — and build the labs, curricula, and learning communities that help students master systems.</h1>
+      <p class="lede">I am a tenure-track Assistant Professor of Computer and Information Sciences at Spelman College. My research in wireless and physical-layer security is what keeps my systems teaching current; my classroom is where that research has to earn its keep, one cohort of students at a time.</p>
+    </div>
+    <aside class="glance">
+      <img class="portrait" src="https://ebukaoguchi.github.io/philippo-enhanced.png" alt="Portrait of Ebuka Philip Oguchi">
+      <h3>At a glance</h3>
+      <dl>
+        <dt>Role</dt><dd>Assistant Professor (tenure track), Spelman College</dd>
+        <dt>Office</dt><dd>Albro-Falconer-Manley Science Center 316</dd>
+        <dt>Ph.D.</dt><dd>Computer Science, University of Nebraska–Lincoln, 2025</dd>
+        <dt>Teaching</dt><dd>Computer Organization &amp; Design · C++ Programming · Operating Systems / Architecture laboratory (from Spring 2027)</dd>
+        <dt>Also</dt><dd>Collaborator, Spelman Cybersecurity Clinic (Google.org) · NSF Center for Distributed Confidential Computing</dd>
+      </dl>
+    </aside>
+  </div>
+
+  <!-- 01 TEACHING -->
+  <section id="teaching">
+    <div class="sec-head"><span class="sec-num">01</span><h2>Teaching</h2></div>
+    <p class="sec-sub">My courses follow one continuous pathway through the machine. Students meet each layer as a thing they can build, measure, and break — not as a diagram to memorise. Select a stage:</p>
+
+    <div class="pathway" id="pathway">
+      <button data-stage="0" class="active">01 Source code</button><span class="arrow">→</span>
+      <button data-stage="1">02 Compiler</button><span class="arrow">→</span>
+      <button data-stage="2">03 ISA</button><span class="arrow">→</span>
+      <button data-stage="3">04 Datapath</button><span class="arrow">→</span>
+      <button data-stage="4">05 Memory hierarchy</button><span class="arrow">→</span>
+      <button data-stage="5">06 Operating system</button><span class="arrow">→</span>
+      <button data-stage="6">07 Security</button>
+    </div>
+    <div class="stage" id="stageBox">
+      <h3><span id="stageNum">STAGE 01</span><span id="stageTitle" style="color:var(--text); font-family:Georgia,serif; font-size:1.15rem; letter-spacing:0;">Source code</span></h3>
+      <p id="stageText">Students begin by writing and reading real programs in C++, building the habit of tracing what code does before asking what the machine does with it.</p>
+    </div>
+
+    <div style="height:22px"></div>
+    <div class="cards">
+      <div class="card">
+        <div class="meta">Spelman · Lecture + Lab</div>
+        <h3>SCIS 216 — Computer Organization and Design</h3>
+        <p>The core of the pathway: instruction sets, datapath and control, pipelining, and the memory hierarchy, taught with a paired hands-on laboratory.</p>
+      </div>
+      <div class="card">
+        <div class="meta">Spelman · Lecture + Lab</div>
+        <h3>SCIS 123 — C++ Programming</h3>
+        <p>First serious programming: disciplined problem-solving in C++, with lab work that connects every language construct to what the machine is actually doing.</p>
+      </div>
+      <div class="card">
+        <div class="meta">Spelman · Spring 2027</div>
+        <h3>SCIS 121 &amp; the OS / Architecture Laboratory</h3>
+        <p>The course I teach next: a laboratory in operating systems and computer architecture, extending the pathway to processes, virtual memory, and scheduling.</p>
+        <span class="tag">Spring 2027</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- 02 EDUCATIONAL LEADERSHIP -->
+  <section id="leadership">
+    <div class="sec-head"><span class="sec-num">02</span><h2>Educational Leadership</h2></div>
+    <p class="sec-sub">Teaching well in my own classroom is the floor, not the ceiling. These are the projects through which my teaching is meant to outlast my own course schedule — materials and structures other instructors can adopt.</p>
+    <div class="cards">
+      <div class="card">
+        <div class="meta">Project</div>
+        <h3>A shared lab repository for systems courses</h3>
+        <p>A project on my agenda, set out in my Educational Leadership vision: adaptable laboratory modules for computer organization, architecture, and operating systems — with staged milestones and automated feedback — assembled into a living repository that colleagues can adopt, remix, and improve. The design is written; the repository itself is still to be built.</p>
+        <span class="tag">Planned</span>
+      </div>
+      <div class="card">
+        <div class="meta">Project</div>
+        <h3>The Cybersecurity Clinic, in the curriculum</h3>
+        <p>As a collaborator on the Google.org Cybersecurity Clinic at Spelman, I work on integrating real, client-facing security work for under-resourced organisations into the undergraduate cybersecurity curriculum — service and coursework reinforcing each other.</p>
+      </div>
+      <div class="card">
+        <div class="meta">Project</div>
+        <h3>Developing TAs and peer mentors</h3>
+        <p>Large systems courses run on their teaching teams. Planned: structured preparation and mentoring for the undergraduate TAs and peer mentors who staff labs and office hours — because students often learn the pathway first from someone one step ahead of them on it.</p>
+        <span class="tag">Planned</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- 03 SoTL -->
+  <section id="sotl">
+    <div class="sec-head"><span class="sec-num">03</span><h2>Scholarship of Teaching &amp; Learning</h2></div>
+    <p>My systems pathway generates its own research questions — about learning rather than about networks. Current lines of inquiry:</p>
+    <ul class="clean">
+      <li>How do students build mental models of address translation and virtual memory, and where do those models first break?</li>
+      <li>Where do caching and memory-hierarchy misconceptions form, and which laboratory interventions actually dislodge them?</li>
+      <li>What do near-peer voices — students one cohort ahead — do for belonging and persistence in demanding systems courses?</li>
+    </ul>
+    <p class="muted">Classroom studies run with ethics approval, and results — including negative ones — are shared with the computing-education community (SIGCSE, ITiCSE) so that other instructors can build on them.</p>
+  </section>
+
+  <!-- 04 MENTORING -->
+  <section id="mentoring">
+    <div class="sec-head"><span class="sec-num">04</span><h2>Mentoring</h2></div>
+    <p>Mentoring is where the pathway becomes personal. At Spelman I mentor undergraduate researchers through their first systems and security projects — framing a question, building the experiment, and presenting the result. I am a recipient of the Google CS Research Mentorship Program (CSRMP) and a member of the Institute for African American Mentoring in Computing Sciences (iAAMCS); the students I have mentored include a Ph.D. student at the University of Nebraska–Lincoln and undergraduate researchers at Spelman.</p>
+    <p>I was selected as Spelman’s faculty fellow for the <strong>ACS Teaching &amp; Learning Workshop</strong> at Rollins College (2026), a programme devoted to evidence-based, inclusive teaching in liberal-arts settings.</p>
+  </section>
+
+  <!-- 05 RESEARCH -->
+  <section id="research">
+    <div class="sec-head"><span class="sec-num">05</span><h2>The research behind the teaching</h2></div>
+    <p class="sec-sub">My technical research develops authentication, message-integrity, and trust-establishment mechanisms for emerging wireless and cyber-physical systems. It is the reason my systems courses can teach security as a property of every layer — and it continues alongside my teaching, through the NSF Center for Distributed Confidential Computing, where I am a collaborator. Selected work:</p>
+    <div class="pub"><strong>Soil-Assisted Trust Establishment for Underground Wireless Networks</strong> — Oguchi, Ghose &amp; Vuran, <span class="venue">IEEE Transactions on Dependable and Secure Computing</span>, accepted 2026.</div>
+    <div class="pub"><strong>LocaRadio: RF Fingerprint-Based Location Authentication for Wireless Networks</strong> — Oguchi et al., <span class="venue">IEEE CCNC</span>, Las Vegas, January 2027.</div>
+    <div class="pub"><strong>A Review of Confidentiality, Integrity, and Availability Challenges in Molecular Communications</strong> — <span class="venue">IEEE Transactions on Molecular, Biological, and Multi-Scale Communications</span>, accepted 2026.</div>
+    <div class="pub"><strong>VET: Autonomous Vehicular Credential Verification</strong> — Oguchi &amp; Ghose, <span class="venue">EAI SecureComm</span>, 2023. &nbsp;·&nbsp; <strong>STUN: Secret-Free Trust-Establishment for Underground Wireless Networks</strong> — <span class="venue">IEEE INFOCOM Workshops</span>, 2022.</div>
+    <p><a href="index.html">Full publication list and research programme →</a></p>
+  </section>
+
+  <!-- 06 NEWS & SERVICE -->
+  <section id="news">
+    <div class="sec-head"><span class="sec-num">06</span><h2>News &amp; Service</h2></div>
+    <ul class="clean">
+      <li><span class="when">Oct 2026</span>LocaRadio accepted for presentation at IEEE CCNC 2027, Las Vegas.</li>
+      <li><span class="when">2026</span>Joined the NSF Center for Distributed Confidential Computing and the Google.org Cybersecurity Clinic initiative as a collaborator.</li>
+      <li><span class="when">Jan 2026</span>Joined Spelman College as a tenure-track Assistant Professor of Computer and Information Sciences.</li>
+      <li><span class="when">Aug 2025</span>Ph.D., University of Nebraska–Lincoln — Outstanding Ph.D. Dissertation Award.</li>
+    </ul>
+    <p class="muted">Reviewer for IEEE Transactions on Dependable and Secure Computing, IEEE Transactions on Industrial Informatics, ACM Transactions on Cyber-Physical Systems, EAI SecureComm, and ACM WiSec. Judge, Spelman College Hack-A-Bot Competition (2026).</p>
+  </section>
+
+  <footer>
+    <div class="row">
+      <div>Ebuka Philip Oguchi · Dept. of Computer &amp; Information Sciences, Spelman College · AFM Science Center 316</div>
+      <div><a href="index.html">← Back to the research homepage</a></div>
+    </div>
+  </footer>
+
+</div>
+
+<script>
+  var stages = [
+    {t:"Source code", x:"Students begin by writing and reading real programs in C++, building the habit of tracing what code does before asking what the machine does with it."},
+    {t:"Compiler", x:"How high-level code becomes instructions — the bridge between the program a student wrote and the machine that has to run it, and the first place precision about language really pays off."},
+    {t:"Instruction set architecture", x:"The contract between software and hardware. In SCIS 216 students meet it head-on, working in assembly and machine code until the abstraction stops being abstract."},
+    {t:"Datapath & control", x:"Inside the processor: how instructions are fetched, decoded, and executed cycle by cycle — built up in simulators and laboratory exercises rather than admired in diagrams."},
+    {t:"Memory hierarchy", x:"Registers, caches, main memory, storage — and the lived experience that the same program can run ten times faster when its data is placed well. This is where performance stops being a mystery."},
+    {t:"Operating system", x:"Processes, virtual memory, and scheduling: the layer that turns one machine into many. The focus of the new Spring 2027 operating systems and computer architecture laboratory."},
+    {t:"Security", x:"Every layer below is also an attack surface. Students trace where trust is established and where it breaks across the whole stack — the thread that ties the pathway to my research in authentication and message integrity."}
+  ];
+  var buttons = document.querySelectorAll('#pathway button');
+  var num = document.getElementById('stageNum'), title = document.getElementById('stageTitle'), text = document.getElementById('stageText');
+  buttons.forEach(function(btn){
+    btn.addEventListener('click', function(){
+      buttons.forEach(function(b){ b.classList.remove('active'); });
+      btn.classList.add('active');
+      var i = parseInt(btn.getAttribute('data-stage'), 10);
+      num.textContent = 'STAGE 0' + (i+1);
+      title.textContent = stages[i].t;
+      text.textContent = stages[i].x;
+    });
+  });
+</script>
+</body>
+</html>
