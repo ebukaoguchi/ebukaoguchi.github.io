@@ -30,19 +30,21 @@
   nav.tabs a.current{color:#0b0e13; background:var(--accent); border-color:var(--accent); font-weight:bold;}
 
   /* Hero */
-  .hero{padding:56px 0 16px; display:grid; grid-template-columns:1fr; gap:26px;}
-  .hero>div:first-child{align-self:center;}
-  @media(min-width:820px){ .hero{grid-template-columns:1.6fr .9fr;} }
+  .hero{padding:52px 0 10px; display:grid; grid-template-columns:1fr; gap:28px;}
   .kicker{font-family:Helvetica,Arial,sans-serif; font-size:.78rem; letter-spacing:.22em; text-transform:uppercase; color:var(--accent2); margin-bottom:14px;}
   h1{font-size:2.3rem; line-height:1.2; font-weight:normal;}
   h1 em{color:var(--accent); font-style:normal;}
   .hero p.lede{margin-top:16px; font-size:1.08rem; color:#cfd6e4; max-width:56ch;}
-  .glance{background:var(--panel); border:1px solid var(--line); border-radius:12px; padding:20px 22px; align-self:start;}
+  .glance{background:var(--panel); border:1px solid var(--line); border-radius:12px; padding:20px 22px; display:flex; flex-direction:column;}
+  @media(min-width:820px){ .glance{flex-direction:row; gap:26px; align-items:flex-start;} }
+  .glance .facts{flex:1; min-width:0;}
   .glance h3{font-family:Helvetica,Arial,sans-serif; font-size:.75rem; letter-spacing:.18em; text-transform:uppercase; color:var(--muted); margin-bottom:12px;}
-  .glance dl{display:grid; grid-template-columns:auto 1fr; gap:6px 14px; font-size:.95rem;}
+  .glance dl{display:grid; grid-template-columns:auto 1fr; gap:7px 14px; font-size:.95rem;}
+  @media(min-width:820px){ .glance dl{grid-template-columns:auto 1fr auto 1fr; gap:7px 20px;} }
   .glance dt{color:var(--muted); font-family:Helvetica,Arial,sans-serif; font-size:.82rem; padding-top:2px;}
   .glance dd{color:var(--text);}
-  .portrait{width:100%; border-radius:12px; border:1px solid var(--line); display:block; margin-bottom:16px;}
+  .portrait{width:100%; max-height:300px; object-fit:cover; object-position:top; border-radius:12px; border:1px solid var(--line); display:block; margin-bottom:16px;}
+  @media(min-width:820px){ .portrait{width:190px; height:232px; max-height:none; flex:none; margin-bottom:0;} }
 
   /* Sections */
   section{padding:38px 0 8px;}
@@ -110,6 +112,7 @@
     </div>
     <aside class="glance">
       <img class="portrait" src="https://ebukaoguchi.github.io/philippo-enhanced.png" alt="Portrait of Ebuka Philip Oguchi">
+      <div class="facts">
       <h3>At a glance</h3>
       <dl>
         <dt>Role</dt><dd>Assistant Professor (tenure track), Spelman College</dd>
@@ -121,6 +124,7 @@
         <dt>Also</dt><dd>Collaborator, Spelman Cybersecurity Clinic (Google.org) · NSF Center for Distributed Confidential Computing</dd>
         <dt>CV</dt><dd><a href="CVs.pdf">Download CV (PDF)</a></dd>
       </dl>
+      </div>
     </aside>
   </div>
 
