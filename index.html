@@ -267,6 +267,10 @@
   .links-row{display:flex; gap:1.2rem; margin-top:1.4rem; flex-wrap:wrap;}
   .links-row a{font-family:var(--mono); font-size:0.82rem; border:1px solid var(--line-actual); padding:0.45rem 0.85rem; border-radius:4px; color:var(--text-dim);}
   .links-row a:hover{border-color:var(--teal); color:var(--teal); text-decoration:none;}
+  @media (max-width:700px){
+    .links-row{flex-wrap:nowrap; gap:0.45rem;}
+    .links-row a{font-size:0.72rem; padding:0.42rem 0.5rem; white-space:nowrap;}
+  }
 
   .id-card{
     margin-top:2.2rem; background:var(--panel); border:1px solid var(--line-actual); border-radius:6px;
