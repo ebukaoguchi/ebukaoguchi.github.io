@@ -190,6 +190,7 @@
     .sidebar nav.open{transform:translateX(0);}
     .sidebar nav a{padding:0.75rem 0.7rem; min-height:44px;}
     .sidebar .status{display:none;}
+    .sidebar .role{display:none;}
     .navtoggle{
       display:inline-flex; align-items:center; justify-content:center;
       width:44px; height:44px; background:var(--panel); border:1px solid var(--line-actual);
@@ -201,8 +202,11 @@
 
   /* ---------- hero ---------- */
   .hero{padding-top:1rem; position:relative;}
-  .hero-grid{display:grid; grid-template-columns:1fr 280px; gap:2.4rem; align-items:start;}
-  @media (max-width:700px){.hero-grid{grid-template-columns:1fr; gap:1.8rem;}}
+  .hero-grid{display:grid; grid-template-columns:1fr 280px; gap:2.4rem; align-items:start; grid-template-areas:"intro photo" "body photo";}
+  .hero-intro{grid-area:intro;}
+  .hero-body{grid-area:body;}
+  .hero-photo{grid-area:photo;}
+  @media (max-width:700px){.hero-grid{grid-template-columns:1fr; gap:1.8rem; grid-template-areas:"intro" "photo" "body";}}
   .hero h1{font-size:2.05rem; line-height:1.25; margin-bottom:0.5rem;}
   .hero .subtitle{font-family:var(--mono); color:var(--text-dim); font-size:0.95rem; margin-bottom:1.6rem;}
   .hero p{color:var(--text-dim); font-size:1rem; max-width:56ch;}
@@ -461,9 +465,11 @@
     <section id="about" class="hero">
       <div class="eyebrow">faculty profile · secure wireless systems</div>
       <div class="hero-grid">
-        <div>
+        <div class="hero-intro">
           <h1>Ebuka Philip Oguchi</h1>
           <div class="subtitle">Assistant Professor · Cybersecurity &amp; Wireless Systems</div>
+        </div>
+        <div class="hero-body">
           <p>I develop authentication, message-integrity verification, and trust-establishment mechanisms for emerging wireless and cyber-physical systems. My research combines wireless measurements, physical-layer security, signal processing, machine learning, and lightweight protocols to protect communication in resource-constrained environments.</p>
           <p class="journey">I am an Assistant Professor of Computer and Information Sciences at <b>Spelman College</b>. I received my Ph.D. in Computer Science from the University of Nebraska–Lincoln in 2025.</p>
 
@@ -475,7 +481,7 @@
           </div>
         </div>
 
-       <div>
+       <div class="hero-photo">
   <div class="scan-frame">
     <span></span>
     <span class="c2"></span>
